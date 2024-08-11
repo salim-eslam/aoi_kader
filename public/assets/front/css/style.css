@@ -51,6 +51,7 @@ h5,
 h6 {
     font-weight: 400;
     margin-top: 0;
+    color:#0B2154;
     font-family: "Playfair Display", serif;
 }
 
@@ -130,7 +131,7 @@ input[type="submit"] {
 
 img {
     max-width: 100%;
-    height: auto;
+    /* height: auto; */
 }
 
 ul {
@@ -193,7 +194,7 @@ figure {
     line-height: 50px;
     height: 50px;
     padding: 0 45px;
-    background: #373737;
+    background: rgb(93, 1, 1)!important ;
     font-family: "Poppins", sans-serif;
     color: #ffffff;
     border-radius: 0;
@@ -390,7 +391,7 @@ textarea:-ms-input-placeholder {
     Scroll Up
 -----------------------------------------*/
 #scrollUp {
-    background: #e5c592 none repeat scroll 0 0;
+    background: rgb(93, 1, 1)!important  ;
     bottom: 85px;
     color: #ffffff;
     cursor: pointer;
@@ -1467,7 +1468,7 @@ textarea:-ms-input-placeholder {
 }
 
 .footer_bg2 {
-    background: #1a1a1a;
+    background:rgb(93, 1, 1)!important    ;
 }
 
 .footer_style2 .footer_widget_title h3 {
@@ -5076,7 +5077,7 @@ textarea:-ms-input-placeholder {
     height: 100%;
     right: 0;
     top: 0;
-    background: rgb(223, 223, 223);
+    /* background: rgb(223, 223, 223); */
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .slider_section2::before {
@@ -5107,11 +5108,14 @@ textarea:-ms-input-placeholder {
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
     .slider_section2 .slider_thumb {
         width: 630px;
+        height: 80vh;
+
     }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .slider_section2 .slider_thumb {
         width: 500px;
+        height: 70vh;
     }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -5213,8 +5217,8 @@ textarea:-ms-input-placeholder {
     }
 }
 .slider_text2 a.btn.btn-link {
-    background: #eab429;
-    color: #000000;
+    background: rgb(93, 1, 1)!important ;
+    color: #e0e0e0;
 }
 .slider_text2 a.btn.btn-link:hover {
     color: #ffffff;
@@ -5264,12 +5268,14 @@ textarea:-ms-input-placeholder {
 .swiper_buttn_area {
     display: flex;
     position: absolute;
-    bottom: 0;
+    bottom: 22%;
     right: 30%;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .swiper_buttn_area {
         left: 23%;
+        bottom: 175px;
+
     }
 }
 @media only screen and (max-width: 767px) {
@@ -5525,16 +5531,16 @@ textarea:-ms-input-placeholder {
 }
 
 .product_gallery_section {
-    padding: 150px 0 88px;
+    /* padding: 50px 0 88px; */
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .product_gallery_section {
-        padding: 80px 0 75px;
+        /* padding: 30px 0 75px; */
     }
 }
 @media only screen and (max-width: 767px) {
     .product_gallery_section {
-        padding: 60px 0 55px;
+        /* padding: 60px 0 55px; */
     }
 }
 
@@ -5594,7 +5600,7 @@ textarea:-ms-input-placeholder {
 }
 
 .product_details_section {
-    margin-bottom: 100px;
+    /* margin-bottom: 100px; */
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .product_details_section {
@@ -6283,7 +6289,7 @@ textarea:-ms-input-placeholder {
 
 .breadcrumbs_area {
     background: #f9f9f9;
-    padding: 50px 0;
+    padding: 10px 0;
 }
 
 .breadcrumb_content h2 {
@@ -6321,7 +6327,7 @@ textarea:-ms-input-placeholder {
 }
 
 .shop_page_section {
-    padding: 135px 0 128px;
+    /* padding: 135px 0 128px; */
 }
 .shop_page_section .container {
     max-width: 1570px;
@@ -7190,4 +7196,144 @@ iframe {
 .border_border_redius {
     border: 1px solid transparent;
     border-radius: 50%;
+}
+
+
+/*** */
+
+.img1 {
+    vertical-align: middle;
+  }
+
+  /* Position the image container (needed to position the left and right arrows) */
+  .con1 {
+    position: relative;
+  }
+
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  /* Container for image text */
+  .caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+  }
+
+  .row1:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /* Six s side by side */
+  .col1{
+    float: left;
+    width: 16.66%;
+  }
+
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.9;
+  }
+
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+/******************************* */
+/* abdelrahman  code*/
+/* **************************** */
+.video-gallery {
+    margin-bottom: 20px;
+  }
+  .myVideo
+  {
+    height: 400px;
+    width: 350px;
+  }
+  .myVideo iframe
+  {
+    height: 100%;
+    width: 100%;
+  }
+  .video-gallery video {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .video-gallery h5 {
+    margin-top: 10px;
+  }
+
+  .video-gallery p {
+    font-size: 14px;
+    color: #666;
+  }
+
+  .modal-content {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+  }
+
+  #video-player {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+  }
+  .myCard
+  {
+    height: 400px;
+  }
+  .myCard img
+{
+  height: 100%;
 }

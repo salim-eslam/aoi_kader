@@ -1,6 +1,7 @@
 @extends('layouts.front.master')
 
 @section('content')
+<br>
 <div class="breadcrumbs_area">
     <div class="container">
         <div class="row">
@@ -24,7 +25,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="shop_page_inner d-flex ">
-                    <div class="shop_sidebar_widget">
+                    <div class="shop_sidebar_widget mt-5">
                         <div class="shop_widget_list categories">
                             <div class="shop_widget_title categories_title">
                                 <h3>{{ trans('product_filter.categories') }}</h3>
@@ -78,7 +79,7 @@
                                             <figure>
                                                 <div class="product_thumb">
                                                     <a href="{{ route('product_show', encrypt($product->id)) }}"><img src="{{ '/images/products/layout/' . $product->image }}"
-                                                        alt=""></a>
+                                                        alt="" width="100%"></a>
                                                     @if ($product->offerd == 'true')
                                                         <div class="label_product">
                                                             <span class="label_sale">Sale</span>

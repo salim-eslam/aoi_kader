@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="contact_form wow fadeInUp" data-wow-delay="0.1s" data-wow-duration="1.1s">
+                    <div class="shadow contact_form wow fadeInUp" data-wow-delay="0.1s" data-wow-duration="1.1s">
                         <form id="contact-form" method="POST" action="{{ route('message.user.store') }}">
                             @csrf
                             <div class="form_input_inner d-flex">
@@ -50,7 +50,7 @@
                                 <textarea name="message" class="border-0" placeholder="{{ trans('contact.write_us_message') }}"></textarea>
                             </div>
                             <div class="form_input_btn">
-                                <button type="submit" class="btn btn-link">Send message</button>
+                                <button type="submit" class="btn btn-link align-center">Send message</button>
                             </div>
                             <p class="form-messege"></p>
                         </form>

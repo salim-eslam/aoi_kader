@@ -19,7 +19,8 @@ return[
     'info_3_icon_3'=>'Good Facilities',
 
     'shop_now'=>'SHOP NOW',
-    'show_more'=>'SHOW MORE'
+    'show_more'=>'SHOW MORE',
+        'our_partners'=>' Our Partners'
 
 
 ];

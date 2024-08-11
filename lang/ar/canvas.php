@@ -9,6 +9,6 @@ return[
     'message'=>'الرساله',
     'instock'=>'متوفر',
     'sales'=>'الخصومات',
-
    'cataloges'=>'كتالوج',
+    'Video_library'=>'مكتبة الفيديوهات'
 ];

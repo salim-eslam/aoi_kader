@@ -1,5 +1,5 @@
 <!-- Title -->
-<title> Atico dashboard </title>
+<title> Kadeer dashboard </title>
 <!-- Favicon -->
 <link rel="icon" href="{{ URL::asset('assets/admin/img/brand/favicon.png') }}" type="image/x-icon" />
 <!-- Icons css -->

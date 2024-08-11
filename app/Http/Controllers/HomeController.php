@@ -2,25 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Catalog;
-use App\Models\Department;
+use MetaTag;
 use App\Models\Team;
+use App\Models\Catalog;
 use App\Models\Comment;
-use App\Models\PreviosWork;
+use App\Models\Message;
+use App\Models\Partner;
 use App\Models\Product;
 use App\Models\Slidbar;
-use App\Models\Message;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
-use Maatwebsite\Excel\Concerns\ToArray;
-use App\Http\Requests\StoreMessage;
-
+// use PHPSTORM_META\type;
 use App\Mail\UserMessage;
-use Illuminate\Support\Facades\Mail;
+use App\Models\Department;
+use App\Models\PreviosWork;
 
-use function PHPSTORM_META\type;
-use MetaTag;
+use Illuminate\Support\Arr;
+use Illuminate\Http\Request;
+use App\Http\Requests\StoreMessage;
+use Maatwebsite\Excel\Concerns\ToArray;
+// use Illuminate\Support\Facades\MailMETA\type;
 class HomeController extends Controller
 {
     /**
@@ -41,13 +41,15 @@ class HomeController extends Controller
     public function index()
     {
         $slidbars = Slidbar::all();
+        $partners=Partner::all();
         $products = Product::active()->paginate(8);
         // dd($products);
         return view(
             'Front.home',
             [
                 'slidbars' => $slidbars,
-                'products' => $products
+                'products' => $products,
+                'partners' => $partners,
 
             ]
         );
@@ -82,7 +84,7 @@ class HomeController extends Controller
         MetaTag::set('image', asset('assets/front/img/logo/Logo_Arab.png'));
         MetaTag::set('product_description',$product->seo_description);
         MetaTag::set('product_keywords',$product->seo_keywords);
-
+// dd($photos);
         return view('Front.product.singel_product', [
             'product' => $product,
             'photos' => $photos,

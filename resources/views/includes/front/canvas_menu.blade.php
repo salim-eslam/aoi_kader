@@ -39,6 +39,8 @@
                                 </ul>
                             </li>
                             <li class="menu-item-has-children"><a
+                                href="{{ route('about_us') }}">{{ trans('canvas.Video_library') }}</a></li>
+                            <li class="menu-item-has-children"><a
                                     href="{{ route('about_us') }}">{{ trans('canvas.about_us') }}</a></li>
                             <li class="menu-item-has-children"><a
                                     href="{{ route('contact_us') }}">{{ trans('canvas.contact_us') }}</a></li>

@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="ar"  class="no-js">
 
 <head>
     <meta charset="utf-8">
-    {{-- <meta http-equiv="x-ua-compatible" content="ie=edge"> --}}
-    {{-- <title>Atico</title>--}}
-    {{-- <meta name="description"
-        content="{{ MetaTag::get('description')  }}" /> --}}
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <link rel="canonical" href="Replace_with_your_PAGE_URL" />
+
+    <link rel="stylesheet" href="{{ URL::asset('assets/slider/css/plugins/swiper.min.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{ URL::asset('assets/slider/css/style.css ')}}" type="text/css" />
+    <link rel="stylesheet" href="{{ URL::asset('assets/slider/css/custom.css')}}" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer">
+
     <link rel="icon" type="image/png" href="{{ URL::asset('images/logo/icon.png') }}"/>
     <title>{{ MetaTag::get('title') }}</title>
     {!! MetaTag::tag('description') !!}
@@ -28,6 +33,17 @@
 
     {{-- <meta name="msapplication-TileImage"
         content="https://hasthemes.com/wp-content/uploads/2019/04/cropped-favicon-270x270.png" /> --}}
+
+    <!-- CSS
+    ========================= -->
+    {{-- <link rel="stylesheet" href="{{ URL::asset('assets/slider/css/vendor/bootstrap.min.css')}}"> --}}
+
+
+    <!-- Main Style CSS -->
+    {{-- <link rel="stylesheet" href="{{ URL::asset('assets/slider/css/style.css')}}"> --}}
+
+    <!--modernizr min js here-->
+    <script src="{{ URL::asset('assets/slider/js/vendor/modernizr-3.7.1.min.js')}}"></script>
 
     <!-- CSS
     ========================= -->
@@ -60,13 +76,15 @@
     <link rel="stylesheet" href="{{ URL::asset('assets/front/css/nice-select.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('assets/front/css/magnific-popup.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('assets/front/css/jquery-ui.min.css') }}">
+    {{-- <link rel="stylesheet" href="{{ URL::asset('assets/slider/css/main.css')}}">
+<link rel="stylesheet" href="{{ URL::asset('assets/slider/css/custom.css')}}"> --}}
 
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="{{ URL::asset('assets/front/css/style.css') }}">
     @endif
 
     <!--modernizr min js here-->
-    <script src="{{ URL::asset('assets/js/vendor/modernizr-3.7.1.min.js') }}"></script>
+    {{-- <script src="{{ URL::asset('assets/js/vendor/modernizr-3.7.1.min.js') }}"></script> --}}
 
     <!-- Structured Data  -->
     <script type="application/ld+json">
@@ -83,6 +101,7 @@
 
 <body>
 
+
     @include('includes.front.canvas_menu')
 
      @include('includes.front.header')
@@ -92,6 +111,31 @@
     @yield('scripts')
 
 </body>
+
+
+        <!-- Vendor JS-->
+        {{-- <script src="{{ URL::asset('assets/slider/js/vendor/modernizr-3.6.0.min.js')}}"></script>
+        <script src="{{ URL::asset('assets/slider/js/vendor/jquery-3.6.0.min.js')}}"></script>
+        <script src="{{ URL::asset('assets/slider/js/vendor/jquery-migrate-3.3.0.min.js')}}"></script>
+        <script src="{{ URL::asset('assets/slider/js/vendor/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{ URL::asset('assets/slider/js/plugins/slick.js')}}"></script>
+        <script src="{{ URL::asset('assets/slider/js/plugins/jquery.syotimer.min.js')}}"></script>
+        <script src="{{ URL::asset('assets/slider/js/plugins/wow.js')}}"></script>
+        <script src="{{ URL::asset('assets/slider/js/plugins/jquery-ui.js')}}"></script>
+        <script src="{{ URL::asset('assets/slider/js/plugins/perfect-scrollbar.js')}}"></script>
+        <script src="{{ URL::asset('assets/slider/js/plugins/magnific-popup.js')}}"></script>
+        <script src="{{ URL::asset('assets/slider/js/plugins/select2.min.js')}}"></script>
+        <script src="{{ URL::asset('assets/slider/js/plugins/waypoints.js')}}"></script>
+        <script src="{{ URL::asset('assets/slider/js/plugins/counterup.js')}}"></script>
+        <script src="{{ URL::asset('assets/slider/js/plugins/jquery.countdown.min.js')}}"></script>
+        <script src="{{ URL::asset('assets/slider/js/plugins/images-loaded.js')}}"></script>
+        <script src="{{ URL::asset('assets/slider/js/plugins/isotope.js')}}"></script>
+        <script src="{{ URL::asset('assets/slider/js/plugins/scrollup.js')}}"></script>
+        <script src="{{ URL::asset('assets/slider/js/plugins/jquery.vticker-min.js')}}"></script>
+        <script src="{{ URL::asset('assets/slider/js/plugins/jquery.theia.sticky.js')}}"></script>
+        <script src="{{ URL::asset('assets/slider/js/plugins/jquery.elevatezoom.js')}}"></script> --}}
+
+
 <script src="{{ URL::asset('assets/front/js/vendor/jquery-3.4.1.min.js') }}"></script>
 <script src="{{ URL::asset('assets/front/js/vendor/popper.js') }}"></script>
 <script src="{{ URL::asset('assets/front/js/vendor/bootstrap.min.js') }}"></script>
@@ -106,9 +150,30 @@
 <script src="{{ URL::asset('assets/front/js/jquery.counterup.min.js') }}"></script>
 <script src="{{ URL::asset('assets/front/js/jquery-waypoints.js') }}"></script>
 <script src="{{ URL::asset('assets/front/js/jquery-ui.min.js') }}"></script>
-{{-- <script src="{{ URL::asset('assets/front/js/ajax-mail.js') }}"></script> --}}
+<script src="{{ URL::asset('assets/front/js/gallery.js') }}"></script>
+
+
 
 <!-- Main JS -->
 <script src="{{ URL::asset('assets/front/js/main.js') }}"></script>
+
+
+{{-- ffffffffffffffffffff --}}
+
+
+  <!-- Js
+    ========================= -->
+
+
+    <script src="{{ URL::asset('assets/slider/js/plugins/jquery.min.js')}}"></script>
+    <script src="{{ URL::asset('assets/slider/js/plugins/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ URL::asset('assets/slider/js/plugins/bootstrap-slider.min.js')}}"></script>
+    <script src="{{ URL::asset('assets/slider/js/plugins/swiper.min.js')}}"></script>
+    <script src="{{ URL::asset('assets/slider/js/plugins/countdown.js')}}"></script>
+    <script src="{{ URL::asset('assets/slider/js/theme.js')}}"></script>
+
+<!-- Template  JS -->
+{{-- <script src="{{ URL::asset('assets/slider/js/main.js?v=3.3')}}"></script> --}}
+{{-- <script src="{{ URL::asset('assets/slider/js/shop.js?v=3.3')}}"></script> --}}
 
 </html>
