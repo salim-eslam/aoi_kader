@@ -9,5 +9,6 @@ return[
     'cataloges'=>'CATALOGES',
     'message'=>'message',
     'sales'=>'Offers',
-    'instock'=>'In Stock'
+    'instock'=>'In Stock',
+        'Video_library'=>'Video Library '
 ];

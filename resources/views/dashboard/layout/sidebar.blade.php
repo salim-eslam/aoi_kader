@@ -25,6 +25,11 @@
                      <span>لوحة التحكم</span>
                  </a>
              </li>
+             <li>
+                <a href="{{ route('dashboard.partners.index') }}">
+                    <i class="fa fa-circle"></i>الشركاء
+                </a>
+            </li>
 
 
              <li>
@@ -39,6 +44,7 @@
                              <i class="fa fa-circle"></i>الأقسام
                          </a>
                      </li>
+
                      <li>
                          <a href="transactions.html">
                              <i class="fa fa-circle"></i>Transactions

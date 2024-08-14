@@ -1,29 +1,30 @@
 <?php
 
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\CatalogController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\CommentController;
-use App\Http\Controllers\DepartmentController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\MessageController;
-use App\Http\Controllers\OfferController;
-use App\Http\Controllers\TeamController;
-use App\Http\Controllers\PreviosWorkController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\RoleController;
-use App\Http\Controllers\SlidbarController;
-use App\Http\Controllers\UserController;
-use App\Models\Department;
-
 use App\Mail\UserMessage;
-use Illuminate\Support\Facades\Mail;
-
+use App\Models\Department;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\OfferController;
+use App\Http\Controllers\CatalogController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\MessageController;
 
+use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\ProductController;
+
+use App\Http\Controllers\SlidbarController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\PreviosWorkController;
+use App\Http\Controllers\VideoLibraryController;
 
 // use App\Http\Middleware\TrackVisitor;
 
@@ -63,6 +64,13 @@ Route::group(['prefix'=>'/admin/','middleware' => ['auth','admin']], function ()
     Route::resource('cataloges', CatalogController::class);
     Route::resource('previos_works', PreviosWorkController::class);
     Route::resource('products', ProductController::class);
+    // Route::get('partners',  [PartnerController::class,'index'])->name('partners.index');
+    Route::get('partners/index',[PartnerController::class,'index'])->name('partners.index');
+    Route::get('partners/create',[PartnerController::class,'create'])->name('partners.create');
+    Route::post('partners/store',[PartnerController::class,'store'])->name('partners.store');
+    Route::get('partners/edit/{id}',[PartnerController::class,'edit'])->name('partners.edit');
+    Route::post('partners/edit/{id}',[PartnerController::class,'update'])->name('partners.update');
+    Route::delete('partners/delete/{id}',[PartnerController::class,'destroy'])->name('partners.destroy');
 
     Route::resource('messages', MessageController::class);
 
@@ -93,6 +101,9 @@ Route::group(
         Route::get('/',  [HomeController::class, 'index'])->name('home');
         Route::get('/contact_us',  [HomeController::class, 'contact'])->name('contact_us');
         Route::get('/about_us',  [HomeController::class, 'about'])->name('about_us');
+        Route::get('/video_library',  [VideoLibraryController::class, 'index'])->name('video_library');
+
+
         Route::get('/product/show/{id}',  [HomeController::class, 'product_show'])->name('product_show');
         Route::get('/product/depratment_filter/{id}',  [HomeController::class, 'product_department_filter'])->name('product_department_filter');
         Route::get('/product/sales',  [HomeController::class, 'product_sales_filter'])->name('product_sales_filter');

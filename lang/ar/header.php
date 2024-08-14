@@ -9,7 +9,7 @@ return[
     'message'=>'الرساله',
     'sales'=>'الخصومات',
     'cataloges'=>'كتالوج',
-
-    'instock'=>'المخزن'
+    'instock'=>'المخزن',
+        'Video_library'=>'مكتبة الفيديوهات'
 
 ];

@@ -11,5 +11,6 @@ return[
     'On_Sales'=>'On Sales',
     'sales'=>'Offers',
     'cataloges'=>'CATALOGES',
+    'Video_library'=>'Video Library '
 
 ];

@@ -1,3 +1,16 @@
+.slick-prev {
+    right: -45px !important; /* Ensures the right position is respected */
+    left: auto !important;
+}
+
+.slick-next {
+    left: -45px !important; /* Ensures the left position is respected */
+    right: auto !important;
+}
+
+.choice_text h4 {
+    text-align: right !important; /* Force text to align to the right */
+}
 /*
     CSS INDEX
     =========================================
@@ -118,7 +131,7 @@ button, input[type=submit] {
 
 img {
   max-width: 100%;
-  height: auto;
+  /* height: auto; */
 }
 
 ul {
@@ -1594,6 +1607,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     left: 0;
   }
 }
+
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .choice_slick > button {
     left: 0;
@@ -1604,6 +1618,10 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     left: 0;
   }
 }
+.choice_section {
+    direction: rtl;
+}
+
 @media only screen and (max-width: 767px) {
   .choice_slick > button {
     font-size: 20px;
@@ -2170,10 +2188,14 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 .welcome_befurniture_area {
   margin-bottom: 162px;
+  margin-top: -135px;
+
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .welcome_befurniture_area {
     margin-bottom: 64px;
+    margin-top: -85px;
+
   }
 }
 @media only screen and (max-width: 767px) {
@@ -4994,24 +5016,25 @@ height: 400px !important;
 }
 
 .slider_section2 {
-  position: relative;
-  padding: 150px 0 90px;
+    position: relative;
+    padding: 130px 0 90px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .slider_section2 {
-    padding: 175px 0 60px;
-  }
+    .slider_section2 {
+        padding: 115px 0 60px;
+    }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .slider_section2 {
-    padding: 80px 0 40px;
-  }
+    .slider_section2 {
+        padding: 0px 0 40px;
+    }
 }
 @media only screen and (max-width: 767px) {
-  .slider_section2 {
-    padding: 0;
-  }
+    .slider_section2 {
+        padding: 0;
+    }
 }
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .slider_section2.mb-105 {
     margin-bottom: 78px;
@@ -5029,7 +5052,7 @@ height: 400px !important;
   height: 100%;
   left: 0;
   top: 0;
-  background: rgb(223, 223, 223);
+  /* background: rgb(223, 223, 223); */
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .slider_section2::before {
@@ -5042,28 +5065,70 @@ height: 400px !important;
   }
 }
 .slider_section2 .slider_thumb {
-  width: 705px;
+  width: 805px;
+  width: 100%;
   height: 400px;
 
 
 }
+.slider_thumb img {
+    width: 100%; /* Makes sure the image stretches to full width */
+    height: 76vh;/* Makes sure the image stretches to full height
+    object-fit: cover; /* Covers the div without stretching */
+    object-position: center; /* Centers the image */
+}
+@media only screen and (min-width: 1200px) and (max-width: 1600px) {
+    .slider_thumb img {
+
+      /* height:100%; */
+
+    }
+  }
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .slider_thumb img {
+        /* width: 650px; */
+      height: 50vh;
+
+    }
+  }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .slider_thumb img {
+        /* width: 500px; */
+      height: 50vh;
+
+    }
+  }
+@media only screen and (max-width: 767px) {
+    .slider_thumb img {
+        /* width: 100%; */
+        height: 50vh;
+        /* padding: 0 30px; */
+    }
+}
+@media only screen and (max-width: 575px) {
+    .slider_thumb img {
+        height: 50vh;
+    }
+}
+
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
   .slider_section2 .slider_thumb {
-    width: 630px;
-    height: 420px;
+    width: 730px;
+    /* width: 100%; */
+    height:100vh;
 
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .slider_section2 .slider_thumb {
-    width: 500px;
+    width: 650px;
     height: 420px;
 
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .slider_section2 .slider_thumb {
-    width: 400px;
+    width: 500px;
     height: 420px;
 
   }
@@ -5076,7 +5141,7 @@ height: 400px !important;
 }
 @media only screen and (max-width: 575px) {
   .slider_section2 .slider_thumb {
-    padding: 0 15px;
+    /* padding: 0 15px; */
   }
 }
 @media only screen and (max-width: 767px) {
@@ -5086,36 +5151,36 @@ height: 400px !important;
 }
 
 .slider_text2 {
-    width: calc(100% - 705px);
-    /* padding-top: 45px; */
+    width: calc(100% - 730px);
+    /* padding-top: 95px; */
     padding-left: 160px;
-    padding-right: 80px;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
     .slider_text2 {
-        width: calc(100% - 630px);
+        width: calc(100% - 730px);
         /* padding-top: 100px; */
-        padding-left: 60px;
+        padding-right: 60px;
+        margin-top: 50px;
     }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .slider_text2 {
-        width: calc(100% - 500px);
+        width: calc(100% - 650px);
         /* padding-top: 70px; */
-        padding-left: 40px;
+        padding-right: 50px;
     }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .slider_text2 {
-        width: calc(100% - 400px);
+        width: calc(100% - 500px);
         /* padding-top: 32px; */
-        padding-left: 35px;
+        padding-right: 50px;
     }
 }
 @media only screen and (max-width: 767px) {
     .slider_text2 {
         width: 100%;
-        padding: 0 0px 30px;
+        padding: 0 30px 30px;
         text-align: center;
     }
 }
@@ -5165,7 +5230,8 @@ height: 400px !important;
 .slider_text2 a.btn.btn-link {
   background: #EAB429;
   color: #000000;
-   margin-top: 50px;
+   margin-top: 30px;
+   /* margin-right: 150px; */
 }
 .slider_text2 a.btn.btn-link:hover {
   color: #ffffff;
@@ -5181,49 +5247,46 @@ height: 400px !important;
   margin-top: 120px;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
-  .slider_text2 p {
-    margin-top: 60px;
-    font-size: 20px;
-  }
+    .slider_text2 p {
+        margin-top: 40px;
+    }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .slider_text2 p {
-    font-size: 26px;
-    line-height: 40px;
-    margin-top: 40px;
-  }
+    .slider_text2 p {
+        font-size: 26px;
+        line-height: 40px;
+        margin-top: -20px;
+    }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .slider_text2 p {
-    font-size: 23px;
-    line-height: 38px;
-    margin-top: 35px;
-  }
+    .slider_text2 p {
+        font-size: 23px;
+        line-height: 38px;
+        margin-top: 20px;
+    }
 }
 @media only screen and (max-width: 767px) {
-  .slider_text2 p {
-    font-size: 17px;
-    line-height: 32px;
-    margin-top: 25px;
-  }
+    .slider_text2 p {
+        font-size: 17px;
+        line-height: 32px;
+        margin-top: 20px;
+    }
 }
 @media only screen and (max-width: 575px) {
-  .slider_text2 p {
-    margin-top: 20px;
-    font-size: 20px;
-
-  }
+    .slider_text2 p {
+        margin-top: 20px;
+    }
 }
 
 .swiper_buttn_area {
   display: flex;
   position: absolute;
-  bottom: 0;
+  bottom: 27%;
   left: 30%;
+
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .swiper_buttn_area {
-
     left: 23%;
   }
 }
@@ -5550,16 +5613,16 @@ height: 400px !important;
 }
 
 .product_details_section {
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .product_details_section {
-    margin-bottom: 64px;
+    /* margin-bottom: 64px; */
   }
 }
 @media only screen and (max-width: 767px) {
   .product_details_section {
-    margin-bottom: 43px;
+    /* margin-bottom: 43px; */
   }
 }
 
@@ -7137,4 +7200,255 @@ iframe{
     border: 1px solid transparent;
     border-radius: 50%;
 }
+/************************ */
 
+/*** */
+
+.img1 {
+    vertical-align: middle;
+  }
+
+  /* Position the image container (needed to position the left and right arrows) */
+  .con1 {
+    position: relative;
+  }
+
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  /* Container for image text */
+  .caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+  }
+
+  .row1:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /* Six s side by side */
+  .col1{
+    float: left;
+    width: 16.66%;
+  }
+
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
+  }
+
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+
+/******************************* */
+/* abdelrahman  code*/
+/* **************************** */
+.video-gallery {
+    margin-bottom: 20px;
+  }
+  .myVideo
+  {
+    height: 400px;
+    width: 350px;
+  }
+  .myVideo iframe
+  {
+    height: 100%;
+    width: 100%;
+  }
+  .video-gallery video {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .video-gallery h5 {
+    margin-top: 10px;
+  }
+
+  .video-gallery p {
+    font-size: 14px;
+    color: #666;
+  }
+
+  .modal-content {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+  }
+
+  #video-player {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+  }
+  .myCard
+  {
+    height: 400px;
+  }
+  .myCard img
+{
+  height: 100%;
+}
+/************************************* */
+/*********************************** */
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+   .dot:hover {
+    background-color: #717171;
+  }
+
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+
+  /************* */
+  .product-image {
+    width: 100%;
+    height: 250px; /* Adjust the height as needed */
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+     /* Ensures the image covers the area without distortion */
+}
+
+.category-carousel{
+    margin-top: -50px;
+}
+.card-product{
+    border: 2px solid rgba(18, 17, 17, 0.164);
+    border-radius:24px;
+}
+.product-image:hover {
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+/****************************** */

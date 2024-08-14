@@ -4,7 +4,8 @@
 <section class="contact_page_section">
     <!--contact map start-->
     <div class="contact_map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2897.941676057003!2d31.355258443273524!3d30.258375800581273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14580d721ee6bc9b%3A0x9f4f5ecb09f24699!2z2YXYtdmG2Lkg2KfYqtmK2YPZiA!5e0!3m2!1sar!2seg!4v1690874956831!5m2!1sar!2seg" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2897.941676057003!2d31.355258443273524!3d30.258375800581273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14580d721ee6bc9b%3A0x9f4f5ecb09f24699!2z2YXYtdmG2Lkg2KfYqtmK2YPZiA!5e0!3m2!1sar!2seg!4v1690874956831!5m2!1sar!2seg" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> --}}
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d215.78186172137984!2d31.31869241412494!3d30.07958307134879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583f17819003bd%3A0x5788391b0502453f!2z2YXYtdmG2Lkg2YLYp9iv2LEg2YTZhNi12YbYp9i52KfYqiDYp9mE2YXYqti32YjYsdip!5e0!3m2!1sar!2seg!4v1723399254519!5m2!1sar!2seg" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
     </div>
     <!--contact map end-->
     <div class="contact_page_details">
@@ -35,7 +36,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="contact_form wow fadeInUp" data-wow-delay="0.1s" data-wow-duration="1.1s">
+                    <div class="shadow contact_form wow fadeInUp" data-wow-delay="0.1s" data-wow-duration="1.1s">
                         <form id="contact-form" method="POST" action="{{ route('message.user.store') }}">
                             @csrf
                             <div class="form_input_inner d-flex">
@@ -50,7 +51,7 @@
                                 <textarea name="message" class="border-0" placeholder="{{ trans('contact.write_us_message') }}"></textarea>
                             </div>
                             <div class="form_input_btn">
-                                <button type="submit" class="btn btn-link">Send message</button>
+                                <button type="submit" class="btn btn-link align-center">Send message</button>
                             </div>
                             <p class="form-messege"></p>
                         </form>

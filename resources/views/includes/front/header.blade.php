@@ -7,9 +7,9 @@
                     <div class="header_logo">
                         <a class="sticky_none" href="{{ route('home') }}">
                             @if (app()->getLocale() == 'ar')
-                            <img src="{{ URL::asset('/images/logo/Logo_Arab.png') }}" style="height: 100px !important" alt="">
+                            <img src="{{ URL::asset('/images/logo/logo1.jpg') }}" style="height: 80px !important; width:110px; margin-right:20px" alt="">
                             @else
-                            <img src="{{ URL::asset('/images/logo/Logo_Eng.png') }}" style="height: 100px !important" alt="">
+                            <img src="{{ URL::asset('/images/logo/logo1.jpg') }}" style="height: 80px !important ;width:110px; margin-left:20px " alt="">
                             @endif
                         </a>
                     </div>
@@ -32,8 +32,8 @@
 
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a class="active" href="{{ route('product_sales_filter') }}">{{ trans('header.sales') }}</a>
+                                    {{-- <li>
+                                        <a class="active" href="{{ route('product_sales_filter') }}">{{ trans('header.sales') }}</a> --}}
 
                                     <li>
                                         <a class="active" href="#">{{ trans('header.our_profile') }}</a>
@@ -43,6 +43,8 @@
 
                                         </ul>
                                     </li>
+                                    <li >
+                                        <a class="active" href="{{ route('video_library') }}">{{ trans('header.Video_library') }}</a></li>
                                     <li>
                                         <a class="active" href="{{ route('about_us') }}">{{ trans('header.about_us') }}</a>
                                     </li>
