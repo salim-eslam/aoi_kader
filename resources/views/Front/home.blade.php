@@ -298,6 +298,8 @@
           </div><!-- /.products-carousel__next --> --}}
         </div><!-- /.position-relative -->
       </section>
+    </div>
+
 
 @endsection
 @section('scripts')
