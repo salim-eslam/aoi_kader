@@ -107,6 +107,8 @@
             </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
+
+        <div class="col-lg-4 col-md-6 col-sm-12">
             <!-- Video 3 -->
             <div class="video-gallery">
                 <div class="embed-responsive embed-responsive-16by9 myVideo">
@@ -116,8 +118,13 @@
                 <p class="video-description" data-description="Description for Video 3">Video 3 Description</p>
             </div>
         </div>
+
+
+
     </div>
 </div>
+
+
 
 
 {{-- </div> --}}
@@ -127,15 +134,16 @@
 @endsection
 @section('scripts')
 <script>
-    document.querySelectorAll('.video-gallery iframe').forEach(iframe => {
-        iframe.parentElement.addEventListener('click', function() {
-            const videoUrl = iframe.getAttribute('data-video-url');
-            const description = this.nextElementSibling.nextElementSibling.getAttribute('data-description');
-            document.getElementById('video-player').setAttribute('src', videoUrl);
-            document.querySelector('#video-modal .modal-body p').textContent = description;
-            const modal = new bootstrap.Modal(document.getElementById('video-modal'));
-            modal.show();
-        });
-    });
+const videoDescriptions = document.querySelectorAll('.video-description');
+
+// Add a click event listener to each video description
+videoDescriptions.forEach((description) => {
+  description.addEventListener('click', (event) => {
+    // Show the popup when the video description is clicked
+    const popup = description.nextElementSibling;
+    popup.style.display = 'block';
+  });
+});
+
 </script>
 @endsection

@@ -5,92 +5,7 @@
 @endsection
 @section('css')
 <style>
-.img1 {
-  vertical-align: middle;
-}
 
-/* Position the image container (needed to position the left and right arrows) */
-.con1 {
-  position: relative;
-}
-
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
-
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-  cursor: pointer;
-}
-
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* Container for image text */
-.caption-container {
-  text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
-  color: white;
-}
-
-.row1:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Six columns side by side */
-.col1{
-  float: left;
-  width: 16.66%;
-}
-
-/* Add a transparency effect for thumnbail images */
-.demo {
-  opacity: 0.6;
-}
-
-.active,
-.demo:hover {
-  opacity: 1;
-}
     </style>
 @endsection
 @section('content')
@@ -113,9 +28,11 @@
 </div>
 
 <div class="container mt-5">
-    <h2 style="text-align:center">Slideshow Gallery</h2>
+<div class="row">
+    {{-- <h2 style="text-align:center">Slideshow Gallery</h2> --}}
+    <div class="col-3"></div>
 
-    <div class="con1">
+    <div class="con1 col-lg-6 col-md-10">
         @for($j = 0; $j < count($photos); $j++)
             <div class="mySlides">
                 <div class="numbertext">{{ $j + 1 }} / {{ count($photos) }}</div>
@@ -138,39 +55,40 @@
             @endfor
         </div>
     </div>
+    <div class="col-3"></div>
+
+</div>
 </div>
 
 
     <!-- product gallery section start -->
-    <div class="product_gallery_section mt-5">
+    {{-- <div class="product_gallery_section mt-5">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <div class="product_gallery_inner d-flex">
-                        {{-- <div class="product_gallery_list"> --}}
-                            {{-- <div class="product_gallery_thumb" > --}}
-                                {{-- <a href="#"> <img src="{{ '/images/products/layout/' . $product->image }}"   alt=""></a> --}}
-                            {{-- </div> --}}
-                        {{-- </div> --}}
+                <!-- Single Product Image -->
+                <div class="col-4">
+                    <a href="#">
+                        <img src="{{ asset('/images/products/layout/' . $product->image) }}" width="100%" height="400px" alt="">
+                    </a>
+                </div>
+                <!-- Gallery Images -->
+                <div class="col-8">
+                    <div class="row">
+                        @foreach ($photos as $index => $photo)
+                            <div class="col-6 mb-2">
+                                <img class="demo cursor" src="{{ asset('images/products/attachments/' . $photo) }}" alt="" style="width: 100%; height: auto;">
+                            </div>
+                        @endforeach
 
-                        @for ($k=0;$k<count($photos);$k=$k+2)
-                        <div class="product_gallery_list">
-                            @for($i = $k; $i <$k+1; $i++)
-                            @for($j =$i; $j <$i+2; $j++)
-                            <div class="product_gallery_thumb">
-
-                                    <a href="#"><img src="{{ '/images/products/attachments/' . $photos[$j]}}" alt=""></a>
-                                </div>
-                            @endfor
-                            @endfor
-                        </div>
-                        @endfor
+                        <!-- Add empty divs if the number of images is odd -->
+                        @if (count($photos) % 2 != 0)
+                            <div class="col-6 mb-2" style="visibility: hidden;"></div>
+                        @endif
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
+    </div> --}}
     <!-- product gallery section end -->
 
     <!-- product details css here -->
@@ -189,7 +107,7 @@
                                         <li><a href="#"><i class="ion-star"></i></a></li>
                                         <li><a href="#"><i class="ion-star"></i></a></li>
                                         <li class="review"><span>5 Reviews</span></li>
-                                    </ul>
+                                    </ul>$photos[0]
                                 </div>
                                 <div class="in_stock">
                                     <span><img src="assets/img/icon/check.png" alt=""> in Stock</span>
@@ -205,7 +123,7 @@
                             @endif
                             <div class="product_desc">
                                 <p>{!! $product->description !!} </p>
-                            </div>
+                            </div>$photos[0]
                         </form>
                     </div>
                 </div>
@@ -273,39 +191,39 @@
             <div class="product__title text-center">
                 <h2>{{ trans('singel_product.related_products') }}</h2>
             </div>
-            <div class="related_product_inner">
+            {{-- <div class="related_product_inner"> --}}
                 <div class="row">
-                    @foreach ($related_product as $r_product)
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <article class="single_product">
-                                <figure>
-                                    <div class="product_thumb">
-                                        <a href="{{ route('product_show', encrypt($r_product->id)) }}"><img src="{{ '/images/products/layout/' . $r_product->image }}" alt=""></a>
-                                        @if($r_product->offerd=='true')
-                                            <div class="label_product">
-                                                <span class="label_sale">Sale</span>
-                                            </div>
-                                        @endif
-                                    </div>
-                                    <figcaption class="product_content">
-                                        <h4><a href="{{ route('product_show', encrypt($r_product->id)) }}">{{ $r_product->name }}</a></h4>
-                                        @if ($r_product->offerd == 'true')
-                                            <div class="price_box">
-                                                <span class="current_price">{{ trans('singel_product.price') }} : </span>
-                                                <span class="current_price">{{ $r_product->offer_price }}</span>
-                                            </div>
-                                        @endif
-                                    </figcaption>
-                                </figure>
-                            </article>
+                    {{-- <h1 class="section-title text-center mb-3 pb-xl-2 mb-xl-4">{{ trans('home.our_products') }}</h1> --}}
+                    @foreach ($related_product as $product)
+                    <div class="col-lg-4 col-md-8 mt-5">
+                        <div class="card card-product"  >
+                            <a href="{{ route('product_show', encrypt($product->id)) }}">
+                                <img src="{{ asset('/images/products/layout/' . $product->image) }}" class="product-image" alt="">
+                            </a>
+                            <div class="card-body mt-5">
+                                <h5 class="card-title">{{$product->description}}</h5>
+                            </div>
+                            <div class="card-body">
+                                <button class="w-100 btn btn-secondary">More Details</button>
+                            </div>
                         </div>
+                    </div>
                     @endforeach
                 </div>
-            </div>
+            {{-- </div> --}}
         </div>
     </section>
 
     <!-- product section end -->
+
+
+
+
+
+
+
+
+
 @endsection
 @section('scripts')
 <script>

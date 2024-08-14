@@ -67,9 +67,10 @@ class HomeController extends Controller
         $ID = decrypt($id);
         $product = Product::active()->with(['photos', 'department'])->find($ID);
         $photos = Arr::pluck($product->photos, 'src');
-        if (count($photos) % 2 != 0) {
-            $photos[] = $photos[0];
-        }
+        // dd($product);
+            $photos[] = $product->image;
+        // if (count($photos) % 2 != 0) {
+        // }
         $related_product = Product::active()->where('department_id', '=', $product->department_id)->inRandomOrder()->limit(4)->get();
         // dd($related_product);
         $product->increment('views');

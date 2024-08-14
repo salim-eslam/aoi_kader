@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Partner;
+use App\Traits\SaveFile;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class PartnerController extends Controller
 {
+    use SaveFile;
+
     /**
      * Display a listing of the resource.
      *
@@ -45,35 +48,22 @@ class PartnerController extends Controller
     {
         // Validate the request to ensure 'image' is present and is a file
     $request->validate([
-        'image' => 'required|file|image|max:2048', // max:2048 specifies the maximum file size in kilobytes
+        'image' => 'nullable|file|image|max:2048', // max:2048 specifies the maximum file size in kilobytes
+            'title_en' => 'required|string|max:255',
+            'title_ar' => 'required|string|max:255',
     ]);
+    $finalImagePathName = $this->SaveImage('images/partners', $request->file('image'));
 
-    // Get the uploaded file
-    $image = $request->file('image');
-
-    // Generate a unique filename with a random prefix and original name
-    $imageName = Str::random(10) . '-' . $image->getClientOriginalName();
-
-    // Move the image to the public/uploads/partners directory
-    $image->move(public_path('images/partners'), $imageName);
-
-    // Save the image name to the database
-    $partner = new Partner(); // Assuming you are creating a new Partner instance
-
+    $partner = new Partner();
     $partner->title = [
         'en' => $request->input('title_en'),
         'ar' => $request->input('title_ar'),
     ];
-
-    $partner->image = $imageName;
-
+    $partner->image = $finalImagePathName;
     $partner->status=$request->status;
-    // Save the partner record to the database
     $partner->save();
 
-    // Optionally, you can return a response or redirect
-
-        return redirect()->route('partners.index')->with('success','Partner created successfully');
+    return redirect()->route('partners.index')->with('success','Partner created successfully');
     }
 
     /**
@@ -108,52 +98,43 @@ class PartnerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-{
-    $partner = Partner::find($id);
+    {
+        // Find the partner by ID
+        $partner = Partner::find($id);
+        $request->validate([
+            'image' => 'nullable|file|image|max:2048', // max:2048 specifies the maximum file size in kilobytes
+            'title_en' => 'required|string|max:255',
+            'title_ar' => 'required|string|max:255',
+        ]);
 
-    // Validate the request to ensure 'image' is present and is a file
-    $request->validate([
-        'image' => 'nullable|file|image|max:2048', // max:2048 specifies the maximum file size in kilobytes
-    ]);
+        // Check if an image was uploaded
+        if ($request->hasFile('image')) {
+            $finalImagePathName = $this->saveImage('images/partners/', $request->file('image'));
 
-    // If a new image is uploaded
-    if ($request->hasFile('image')) {
-        // Get the uploaded file
-        $image = $request->file('image');
+            // Delete the old image if it exists
+            if ($partner->image && file_exists(public_path('images/partners/' . $partner->image))) {
+                unlink(public_path('images/partners/' . $partner->image));
+            }
 
-        // Generate a unique filename with a random prefix and original name
-        $imageName = Str::random(10) . '-' . $image->getClientOriginalName();
-
-        // Move the image to the public/uploads/partners directory
-        $image->move(public_path('images/partners'), $imageName);
-
-        // Delete the old image if it exists
-        if ($partner->image && file_exists(public_path('images/partners/' . $partner->image))) {
-            unlink(public_path('images/partners/' . $partner->image));
+            $partner->image = $finalImagePathName;
         }
+        $partner->title = [
+            'en' => $request->input('title_en'),
+            'ar' => $request->input('title_ar'),
+        ];
+        $partner->status = $request->input('status');
+        $partner->save();
 
-        // Save the new image name to the database
-        $partner->image = $imageName;
+        return redirect()->route('partners.index')->with('success', 'Partner updated successfully');
     }
 
-    // Update the title with multilingual support (ensure you have set up the translatable package)
-    $partner->title = [
-        'en' => $request->input('title_en'),
-        'ar' => $request->input('title_ar'),
-    ];
-
-    // Update the status
-    $partner->status = $request->input('status');
-
-    // Save the changes to the database
-    $partner->save();
-
-    // Optionally, you can return a response or redirect
-    return redirect()->route('partners.index')->with('success', 'Partner updated successfully');
-}
-
-
-
+    /**
+     * Saves the uploaded image and returns the file path.
+     *
+     * @param string $directory
+     * @param \Illuminate\Http\UploadedFile $file
+     * @return string
+     */
     /**
      * Remove the specified resource from storage.
      *
@@ -162,23 +143,13 @@ class PartnerController extends Controller
      */
     public function destroy($id)
     {
-        // Find the partner by ID
         $partner = Partner::find($id);
 
-        // Check if the partner exists before attempting to delete
-        // if (!$partner) {
-        //     return redirect()->route('partners.index')->with('error', 'Partner not found.');
-        // }
-
-        // Delete the image if it exists
+        // Delete the old image if it exists
         if ($partner->image && file_exists(public_path('images/partners/' . $partner->image))) {
             unlink(public_path('images/partners/' . $partner->image));
         }
-
-        // Delete the partner record from the database
         $partner->delete();
-
-        // Redirect with success message
         return redirect()->route('partners.index')->with('success', 'Partner deleted successfully.');
     }
 

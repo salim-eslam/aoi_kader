@@ -11,7 +11,7 @@ return[
     'instock'=>'In Stock',
     'info_1'=>'We want to build long-term relationships with our business partners, and this is only possible if they are based on mutual respect, trust and clear operating principles.',
     'info_2'=>'We believe that every space deserves beauty, safety and comfort. We create better spaces.',
-    'info_3_h'=>'Welcome to ATICO Furniture',
+    'info_3_h'=>'Welcome to  kader factory',
     'info_3_p'=>'Responsible development is one of the cornerstones of our company',
 
     'info_3_icon_1'=>'Affordable Price',
@@ -20,7 +20,7 @@ return[
 
     'shop_now'=>'SHOP NOW',
     'show_more'=>'SHOW MORE',
-        'our_partners'=>' Our Partners'
-
+     'our_partners'=>' Our Partners', 
+        'our_products'=>' Our Products',
 
 ];

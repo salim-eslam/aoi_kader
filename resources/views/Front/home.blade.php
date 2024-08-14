@@ -2,90 +2,7 @@
 @section('css')
 <style>
     /* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
 
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
 </style>
 @endsection
 @section('content')
@@ -96,24 +13,17 @@
                 <div class="slider_swiper swiper-container">
                     <div class="swiper-wrapper">
                         @foreach ($slidbars as $slidbar)
-                            <div class="single_slider swiper-slide d-flex">
-                                <div class="slider_thumb">
-                                    <img src="{{ '/images/sliders/' . $slidbar->image }}" alt="">
+                            <div class="single_slider swiper-slide d-flex flex-wrap">
+                                <div class="col-12 col-md-6 slider_thumb order-2 order-md-1">
+                                    <img src="{{ '/images/sliders/' . $slidbar->image }}" alt="{{ $slidbar->title }}">
                                 </div>
-                                @php
-                                    $parts = explode(' ', $slidbar->title);
-                                @endphp
-                                <div class="slider_text2">
-
-                                    <h1 >
-                                        {{ $slidbar->title }}
-                                    </h1 >
-                                    <a class="btn btn-link" href="{{ route('product_search') }}">{{ trans('home.shop_now') }}</a>
+                                <div class="col-12 col-md-6 slider_text2 order-1 order-md-2">
+                                    <h1>{{ $slidbar->title }}</h1>
                                     <p>{{ $slidbar->body }}</p>
+                                    <a class="btn btn-link" href="{{ route('product_search') }}">{{ trans('home.shop_now') }}</a>
                                 </div>
                             </div>
                         @endforeach
-
                     </div>
                     <!-- Add Arrows -->
                     <div class="swiper_buttn_area">
@@ -125,6 +35,8 @@
         </div>
     </div>
 </section>
+
+
 <!-- slider section end -->
     <!-- slider section end -->
 
@@ -169,292 +81,31 @@
     <!-- welcome befurniture area end -->
 
     <!-- product section start -->
-    <div class="product_section product_style2 mb-50">
-        <div class="container">
-            <div class="product_tab_button">
-                <ul class="nav justify-content-center" role="tablist" id="nav-tab">
-                    <li>
-                        <a class="active" data-toggle="tab" href="#products" role="tab" aria-controls="products"
-                            aria-selected="false"> {{ trans('home.products') }} </a>
-                    </li>
-                    <li>
-                        {{-- <a data-toggle="tab" href="#seller" role="tab" aria-controls="seller" aria-selected="false"> Best Seller </a> --}}
-                    </li>
-                    <li>
-                        <a data-toggle="tab" href="#sales" role="tab" aria-controls="sales"
-                            aria-selected="false">{{ trans('home.On_Sales') }} </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="tab-content product_container">
-                <div class="tab-pane fade show active" id="products" role="tabpanel">
-                    <div class="product_gallery">
-                        <div class="row">
-                            @foreach ($products as $product)
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <article class="single_product wow fadeInUp" data-wow-delay="0.1s"
-                                        data-wow-duration="1.1s">
-                                        <figure>
-                                            <div class="product_thumb">
-                                                <a href="{{ route('product_show', encrypt($product->id)) }}">
-                                                    <img src="{{ '/images/products/layout/' . $product->image }}"
-                                                        alt="">
-                                                </a>
-                                                @if ($product->offerd == 'true')
-                                                    <div class="label_product">
-                                                        <span class="label_sale">Sale</span>
-                                                    </div>
-                                                @endif
-                                            </div>
-                                            <figcaption class="product_content">
-                                                <h4>
-                                                    <a href="single-product.html">{{ $product->name }}</a>
-                                                </h4>
-                                                @if ($product->offerd == 'true')
-                                                    <div class="price_box">
-                                                        <span class="current_price">{{ trans('home.price') }} : </span>
-                                                        <span class="current_price">{{ $product->offer_price }}</span>
-                                                    </div>
-                                                @endif
-                                                @if ($product->stocked == 'true')
-                                                    <div class="">
-                                                        <span><img src="{{ URL::asset('/images/icon/check.png') }}"
-                                                                alt=""> {{ trans('home.instock') }}</span>
-                                                    </div>
-                                                @endif
-                                            </figcaption>
-                                        </figure>
-                                    </article>
-                                </div>
-                            @endforeach
-                            <div width="70px" class="text-center">
-                                <a class="btn btn-link"
-                                    href="{{ route('product_search') }}">{{ trans('home.show_more') }}</a>
+    <div class="product_section product_style2 mb-105">
 
-                            </div>
-
-
+        <div class="container mb-5">
+            <div class="row">
+                <h1 class="section-title text-center mb-3 pb-xl-2 mb-xl-4">{{ trans('home.our_products') }}</h1>
+                @foreach ($products as $product)
+                <div class="col-lg-3 col-md-8 mt-5">
+                    <div class="card card-product"  >
+                        <a href="{{ route('product_show', encrypt($product->id)) }}">
+                            <img src="{{ asset('/images/products/layout/' . $product->image) }}" class="product-image" alt="">
+                        </a>
+                        <div class="card-body mt-5">
+                            <h5 class="card-title">{{$product->description}}</h5>
+                        </div>
+                        <div class="card-body">
+                            <button class="w-100 btn btn-secondary">More Details</button>
                         </div>
                     </div>
                 </div>
-                {{-- <div class="tab-pane fade" id="seller" role="tabpanel">
-                <div class="product_gallery">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <article class="single_product">
-                                <figure>
-                                    <div class="product_thumb">
-                                        <a href="single-product.html">
-                                            <img src="{{ URL::asset('/images/product/product5.png')}}" alt="">
-                                        </a>
-                                    </div>
-                                    <figcaption class="product_content">
-                                        <h4>
-                                            <a href="single-product.html">Tufted accent chair with wood legs, Beige</a>
-                                        </h4>
-                                        <div class="price_box">
-                                            <span class="old_price">$399.99</span>
-                                            <span class="current_price">$129.99</span>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                            </article>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <article class="single_product">
-                                <figure>
-                                    <div class="product_thumb">
-                                        <a href="single-product.html">
-                                            <img src="{{ URL::asset('/images/product/product5.png')}}" alt="">
-                                        </a>
-                                        <div class="label_product">
-                                            <span class="label_sale">Sale</span>
-                                        </div>
-                                    </div>
-                                    <figcaption class="product_content">
-                                        <h4>
-                                            <a href="single-product.html">Tufted accent chair with wood legs, Beige</a>
-                                        </h4>
-                                        <div class="price_box">
-                                            <span class="old_price">$399.99</span>
-                                            <span class="current_price">$129.99</span>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                            </article>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <article class="single_product">
-                                <figure>
-                                    <div class="product_thumb">
-                                        <a href="single-product.html">
-                                            <img src="assets/slider/img/product/product7.png" alt="">
-                                        </a>
-                                    </div>
-                                    <figcaption class="product_content">
-                                        <h4>
-                                            <a href="single-product.html">Tufted accent chair with wood legs, Beige</a>
-                                        </h4>
-                                        <div class="price_box">
-                                            <span class="old_price">$399.99</span>
-                                            <span class="current_price">$129.99</span>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                            </article>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <article class="single_product">
-                                <figure>
-                                    <div class="product_thumb">
-                                        <a href="single-product.html">
-                                            <img src="{{ URL::asset('/images/product/product8.png')}}" alt="">
-                                        </a>
-                                    </div>
-                                    <figcaption class="product_content">
-                                        <h4>
-                                            <a href="single-product.html">Tufted accent chair with wood legs, Beige</a>
-                                        </h4>
-                                        <div class="price_box">
-                                            <span class="old_price">$399.99</span>
-                                            <span class="current_price">$129.99</span>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                            </article>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <article class="single_product">
-                                <figure>
-                                    <div class="product_thumb">
-                                        <a href="single-product.html">
-                                            <img src="{{ URL::asset('/images/product/product1.png')}}" alt="">
-                                        </a>
-                                        <div class="label_product">
-                                            <span class="label_hot">hot</span>
-                                        </div>
-                                    </div>
-                                    <figcaption class="product_content">
-                                        <h4>
-                                            <a href="single-product.html">Tufted accent chair with wood legs, Beige</a>
-                                        </h4>
-                                        <div class="price_box">
-                                            <span class="old_price">$399.99</span>
-                                            <span class="current_price">$129.99</span>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                            </article>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <article class="single_product">
-                                <figure>
-                                    <div class="product_thumb">
-                                        <a href="single-product.html">
-                                            <img src="{{ URL::asset('/images/product/product2.png')}}" alt="">
-                                        </a>
-                                    </div>
-                                    <figcaption class="product_content">
-                                        <h4>
-                                            <a href="single-product.html">Tufted accent chair with wood legs, Beige</a>
-                                        </h4>
-                                        <div class="price_box">
-                                            <span class="old_price">$399.99</span>
-                                            <span class="current_price">$129.99</span>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                            </article>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <article class="single_product">
-                                <figure>
-                                    <div class="product_thumb">
-                                        <a href="single-product.html">
-                                            <img src="{{ URL::asset('/images/product/product3.png')}}" alt="">
-                                        </a>
-                                    </div>
-                                    <figcaption class="product_content">
-                                        <h4>
-                                            <a href="single-product.html">Tufted accent chair with wood legs, Beige</a>
-                                        </h4>
-                                        <div class="price_box">
-                                            <span class="old_price">$399.99</span>
-                                            <span class="current_price">$129.99</span>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                            </article>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <article class="single_product">
-                                <figure>
-                                    <div class="product_thumb">
-                                        <a href="single-product.html">
-                                            <img src="{{ URL::asset('/images/product/product4.png')}}" alt="">
-                                        </a>
-                                    </div>
-                                    <figcaption class="product_content">
-                                        <h4>
-                                            <a href="single-product.html">Tufted accent chair with wood legs, Beige</a>
-                                        </h4>
-                                        <div class="price_box">
-                                            <span class="old_price">$399.99</span>
-                                            <span class="current_price">$129.99</span>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                            </article>
-                        </div>
-
-                    </div>
-                </div>
-            </div> --}}
-                <div class="tab-pane fade" id="sales" role="tabpanel">
-                    <div class="product_gallery">
-                        <div class="row">
-                            @foreach ($products->where('offerd', 'true') as $product)
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <article class="single_product">
-                                        <figure>
-                                            <div class="product_thumb">
-                                                <a href="{{ route('product_show', encrypt($product->id)) }}">
-                                                    <img src="{{ '/images/products/layout/' . $product->image }}"
-                                                        alt="">
-                                                </a>
-                                                <div class="label_product">
-                                                    <span class="label_sale">Sale</span>
-                                                </div>
-                                            </div>
-                                            <figcaption class="product_content">
-                                                <h4>
-                                                    <a href="single-product.html">{{ $product->name }}</a>
-                                                </h4>
-                                                <div class="price_box">
-                                                    <span class="current_price">{{ trans('home.price') }} : </span>
-                                                    <span class="current_price">{{ $product->offer_price }}</span>
-                                                </div>
-                                                <div class="in_stock">
-                                                    <span><img src="{{ URL::asset('/images/icon/check.png') }}"
-                                                            alt=""> {{ trans('home.instock') }}</span>
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-                                    </article>
-                                </div>
-                            @endforeach
-                            <div width="70px" class="text-center">
-                                <a class="btn btn-link"
-                                    href="{{ route('product_sales_filter') }}">{{ trans('home.show_more') }}</a>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
-    </div>
+
+
+
     <!-- product section end -->
 
     <!-- banner advice section start -->
@@ -622,8 +273,8 @@
           @foreach ($partners as $partner )
 
               <div class="swiper-slide">
-                <img loading="lazy" class="w-100  mb-3" src="{{asset('images/partners/'.$partner->image )}}" width="124"
-                  height="124" alt="" />
+                <img loading="lazy" class="w-100  mb-3" src="{{asset('images/partners/'.$partner->image )}}" width="100%"
+                  height="100vh" alt="" />
                 <div class="text-center">
                   <a href="#" class="menu-link fw-medium">{{$partner->title}}</a>
                 </div>

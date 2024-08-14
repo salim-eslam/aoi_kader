@@ -455,7 +455,9 @@ textarea:-ms-input-placeholder {
 .mb-55 {
     margin-bottom: 55px;
 }
-
+.category-carousel{
+    margin-top: -50px;
+}
 .mb-50 {
     margin-bottom: 50px;
 }
@@ -696,11 +698,11 @@ textarea:-ms-input-placeholder {
 }
 
 .main_header {
-    padding: 47px 0 42px;
+    padding: 20px 0 42px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .main_header {
-        padding: 35px 0 45px;
+        padding: 20px 0 45px;
     }
 }
 @media only screen and (max-width: 767px) {
@@ -2189,10 +2191,13 @@ textarea:-ms-input-placeholder {
 
 .welcome_befurniture_area {
     margin-bottom: 162px;
+    margin-top: -45px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .welcome_befurniture_area {
         margin-bottom: 64px;
+        margin-top: -85px;
+
     }
 }
 @media only screen and (max-width: 767px) {
@@ -5043,16 +5048,16 @@ textarea:-ms-input-placeholder {
 
 .slider_section2 {
     position: relative;
-    padding: 180px 0 90px;
+    padding: 130px 0 0px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .slider_section2 {
-        padding: 175px 0 60px;
+        padding: 115px 0 60px;
     }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .slider_section2 {
-        padding: 80px 0 40px;
+        padding: 0px 0 40px;
     }
 }
 @media only screen and (max-width: 767px) {
@@ -5062,7 +5067,7 @@ textarea:-ms-input-placeholder {
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .slider_section2.mb-105 {
-        margin-bottom: 78px;
+        margin-bottom: 98px;
     }
 }
 @media only screen and (max-width: 767px) {
@@ -5089,40 +5094,76 @@ textarea:-ms-input-placeholder {
         display: none;
     }
 }
-.slider_thumb {
+/* .slider_thumb {
     width: 100%; /* Ensures it takes full width of its parent */
-    height: 100%; /* Ensures it takes full height of its parent */
-    overflow: hidden; /* Hides any overflow of the image */
-    position: relative; /* Positions the thumbnail container */
-}
+    /* height: 100vh; Ensures it takes full height of its parent */
+    /* overflow: hidden; Hides any overflow of the image */
+    /* position: relative; Positions the thumbnail container */
+/* }  */
 
 .slider_thumb img {
     width: 100%; /* Makes sure the image stretches to full width */
-    height: 80%; /* Makes sure the image stretches to full height */
-    object-fit: cover; /* Covers the div without stretching */
+    height: 76vh; /* Makes sure the image stretches to full height */
+    /* object-fit: cover; Covers the div without stretching */
     object-position: center; /* Centers the image */
 }
-.slider_section2 .slider_thumb {
-    width: 705px;
-}
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
-    .slider_section2 .slider_thumb {
-        width: 630px;
-        height: 80vh;
+    .slider_thumb img {
+
+      /* height:100%; */
 
     }
-}
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-    .slider_section2 .slider_thumb {
-        width: 500px;
-        height: 70vh;
+  }
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .slider_thumb img {
+        /* width: 650px; */
+      height: 50vh;
+
+    }
+  }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .slider_thumb img {
+        /* width: 500px; */
+      height: 50vh;
+
+    }
+  }
+@media only screen and (max-width: 767px) {
+    .slider_thumb img {
+        /* width: 100%; */
+        height: 50vh;
+        /* padding: 0 30px; */
     }
 }
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-    .slider_section2 .slider_thumb {
-        width: 400px;
+@media only screen and (max-width: 575px) {
+    .slider_thumb img {
+        height: 50vh;
     }
 }
+
+
+@media only screen and (min-width: 1200px) and (max-width: 1600px) {
+    .slider_section2 .slider_thumb {
+      width: 730px;
+      /* width: 100%; */
+      height:90vh;
+
+    }
+  }
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .slider_section2 .slider_thumb {
+      width: 650px;
+      height: 420px;
+
+    }
+  }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .slider_section2 .slider_thumb {
+      width: 500px;
+      height: 420px;
+
+    }
+  }
 @media only screen and (max-width: 767px) {
     .slider_section2 .slider_thumb {
         width: 100%;
@@ -5141,27 +5182,28 @@ textarea:-ms-input-placeholder {
 }
 
 .slider_text2 {
-    width: calc(100% - 705px);
+    width: calc(100% - 830px);
     /* padding-top: 95px; */
     padding-left: 160px;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
     .slider_text2 {
-        width: calc(100% - 630px);
+        width: calc(100% - 730px);
         /* padding-top: 100px; */
         padding-left: 60px;
+        margin-top: 50px;
     }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .slider_text2 {
-        width: calc(100% - 500px);
+        width: calc(100% - 650px);
         /* padding-top: 70px; */
         padding-left: 40px;
     }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .slider_text2 {
-        width: calc(100% - 400px);
+        width: calc(100% - 500px);
         /* padding-top: 32px; */
         padding-left: 35px;
     }
@@ -5219,6 +5261,9 @@ textarea:-ms-input-placeholder {
 .slider_text2 a.btn.btn-link {
     background: rgb(93, 1, 1)!important ;
     color: #e0e0e0;
+    margin-top: 30px;
+    /* margin-left: 150px; */
+
 }
 .slider_text2 a.btn.btn-link:hover {
     color: #ffffff;
@@ -5235,21 +5280,21 @@ textarea:-ms-input-placeholder {
 }
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
     .slider_text2 p {
-        margin-top: 60px;
+        margin-top: 20px;
     }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .slider_text2 p {
         font-size: 26px;
         line-height: 40px;
-        margin-top: 40px;
+        margin-top: 20px;
     }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .slider_text2 p {
         font-size: 23px;
         line-height: 38px;
-        margin-top: 35px;
+        margin-top: 20px;
     }
 }
 @media only screen and (max-width: 767px) {
@@ -5261,14 +5306,14 @@ textarea:-ms-input-placeholder {
 }
 @media only screen and (max-width: 575px) {
     .slider_text2 p {
-        margin-top: 20px;
+        margin-top: 0px;
     }
 }
 
 .swiper_buttn_area {
     display: flex;
     position: absolute;
-    bottom: 22%;
+    bottom: 20%;
     right: 30%;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -5300,7 +5345,7 @@ textarea:-ms-input-placeholder {
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .product_section.mb-50 {
-        margin-bottom: 36px;
+        margin-bottom: -66px;
     }
 }
 @media only screen and (max-width: 767px) {
@@ -7337,3 +7382,113 @@ iframe {
 {
   height: 100%;
 }
+/*********************************** */
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+   .dot:hover {
+    background-color: #717171;
+  }
+
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+/*************** nav */
+
+
+
+
+/************* */
+.product-image {
+
+    width: 100%;
+    height: 250px; /* Adjust the height as needed */
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+     /* Ensures the image covers the area without distortion */
+}
+.card-product{
+    border: 2px solid rgba(18, 17, 17, 0.164);
+    border-radius:24px;
+
+}
+.product-image:hover {
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
