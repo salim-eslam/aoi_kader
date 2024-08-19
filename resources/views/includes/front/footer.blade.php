@@ -88,7 +88,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="copyright_right text-center">
-                            <p>&copy; 2023 All rights reserved Made By AOI Atico For Wooding Products</p>
+                            <p>&copy; copyright reserved @ Arab Organization for Industrialization - IT Department - 2024 </p>
                         </div>
                     </div>
                 </div>
