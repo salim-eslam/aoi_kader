@@ -1,4 +1,4 @@
-/*  
+/*
     CSS INDEX
     =========================================
     01. header css here
@@ -129,7 +129,7 @@ figure {
   margin: 0;
 }
 
-/*-- 
+/*--
     - Common Classes
 -----------------------------------------*/
 .fix {
@@ -328,7 +328,7 @@ figure {
   color: #000000;
 }
 
-/*-- 
+/*--
     - Background color
 -----------------------------------------*/
 .bg-white {
@@ -343,7 +343,7 @@ figure {
   background: #354b65;
 }
 
-/*-- 
+/*--
     - Input Placeholder
 -----------------------------------------*/
 input:-moz-placeholder, textarea:-moz-placeholder {
@@ -366,8 +366,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
-/*-- 
-    Scroll Up 
+/*--
+    Scroll Up
 -----------------------------------------*/
 #scrollUp {
   background: #e5c592 none repeat scroll 0 0;
@@ -6965,3 +6965,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     margin-left: 0;
   }
 }
+
+
+/********************** */
