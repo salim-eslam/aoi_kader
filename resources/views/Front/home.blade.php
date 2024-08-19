@@ -93,7 +93,7 @@
                             <img src="{{ asset('/images/products/layout/' . $product->image) }}" class="product-image" alt="">
                         </a>
                         <div class="card-body mt-5">
-                            <h5 class="card-title">{{$product->description}}</h5>
+                            <h5 class="card-title">{!! $product->description !!}</h5>
                         </div>
                         <div class="card-body">
                             <button class="w-100 btn btn-secondary">More Details</button>

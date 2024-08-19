@@ -33,14 +33,18 @@
     <div class="col-3"></div>
 
     <div class="con1 col-lg-6 col-md-10">
-        @for($j = 0; $j < count($photos); $j++)
+        <div class="mySlides">
+            <img id="mainSlider" class="img1" src="{{ asset('images/products/layout/'.$product->image) }}" style="width:100%;height:400px">
+
+        </div>
+        {{-- @for($j = 0; $j < count($photos); $j++)
             <div class="mySlides">
                 <div class="numbertext">{{ $j + 1 }} / {{ count($photos) }}</div>
                 <img class="img1" src="{{ asset('images/products/attachments/' . $photos[$j]) }}" style="width:100%;height:400px">
             </div>
-        @endfor
+        @endfor --}}
 
-        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="prev" onclick="minsSlides(-1)">❮</a>
         <a class="next" onclick="plusSlides(1)">❯</a>
 
         <div class="caption-container">
@@ -48,11 +52,12 @@
         </div>
 
         <div class="row row1 mt-1">
-            @for($j = 0; $j < count($photos); $j++)
+
+            @foreach ($photos as $index =>  $photo )
                 <div class="column col1">
-                    <img class="demo cursor" src="{{ asset('images/products/attachments/' . $photos[$j]) }}" style="width:100%;height:100%" onclick="currentSlide({{ $j + 1 }})" alt="">
+                    <img id="{{ $index }}" class="demo cursor" src="{{ asset( $photo == end($photos) ? 'images/products/layout'.'/' . $photo:'images/products/attachments' .'/' . $photo) }}" style="width:100%;height:100%" onclick="currentSlide({{ $index}})" alt="">
                 </div>
-            @endfor
+            @endforeach
         </div>
     </div>
     <div class="col-3"></div>
@@ -107,7 +112,7 @@
                                         <li><a href="#"><i class="ion-star"></i></a></li>
                                         <li><a href="#"><i class="ion-star"></i></a></li>
                                         <li class="review"><span>5 Reviews</span></li>
-                                    </ul>$photos[0]
+                                    </ul>
                                 </div>
                                 <div class="in_stock">
                                     <span><img src="assets/img/icon/check.png" alt=""> in Stock</span>
@@ -123,7 +128,7 @@
                             @endif
                             <div class="product_desc">
                                 <p>{!! $product->description !!} </p>
-                            </div>$photos[0]
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -227,6 +232,25 @@
 @endsection
 @section('scripts')
 <script>
+   const photos = {{ Js::from($photos) }};
+    var imageID=-1
+    function currentSlide(j){
+        image=document.getElementById(j);
+        document.getElementById("mainSlider").setAttribute('src',image.src);
+        imageID=j;
+    }
+    function plusSlides(n) {
+        if (imageID<photos.length-1) {
+            currentSlide(imageID += n);
+        }
+      }
+      function minsSlides(n) {
+        if (imageID>0) {
+            currentSlide(imageID += n);
+        }
+      }
+</script>
+{{-- <script>
     let slideIndex = 1;
       showSlides(slideIndex);
 
@@ -255,5 +279,5 @@
         dots[slideIndex-1].className += " active";
         captionText.innerHTML = dots[slideIndex-1].alt;
       }
-    </script>
+    </script> --}}
 @endsection
