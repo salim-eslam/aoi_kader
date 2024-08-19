@@ -10,6 +10,7 @@ use App\Models\Message;
 use App\Models\Partner;
 use App\Models\Product;
 use App\Models\Slidbar;
+use App\Models\About;
 
 // use PHPSTORM_META\type;
 use App\Mail\UserMessage;
@@ -145,8 +146,10 @@ class HomeController extends Controller
      public function about()
     {
         $teams=Team::active()->get();
+        $abouts=About::active()->get();
         return view('Front.about_us',[
-            'teams'=>$teams
+            'teams'=>$teams,
+            'abouts'=>$abouts
         ]);
     }
 

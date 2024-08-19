@@ -19,6 +19,7 @@ use App\Http\Controllers\MessageController;
 
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AboutController;
 
 use App\Http\Controllers\SlidbarController;
 use App\Http\Controllers\CategoryController;
@@ -60,6 +61,7 @@ Route::group(['prefix'=>'/admin/','middleware' => ['auth','admin']], function ()
 
     Route::resource('categories', CategoryController::class);
     Route::resource('slidbars', SlidbarController::class);
+    Route::resource('abouts', AboutController::class);
     Route::resource('offers', OfferController::class);
     Route::resource('cataloges', CatalogController::class);
     Route::resource('previos_works', PreviosWorkController::class);
