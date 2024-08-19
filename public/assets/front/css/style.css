@@ -7247,6 +7247,8 @@ iframe {
 /*** */
 
 .img1 {
+    border: 2px solid #b17a5a;
+    border-radius: 5%;
     vertical-align: middle;
   }
 
@@ -7257,7 +7259,9 @@ iframe {
 
   /* Hide the images by default */
   .mySlides {
-    display: none;
+    display: block;
+    border: 1px solid #461d05;
+    border-radius: 5%;
   }
 
   /* Add a pointer when hovering over the thumbnail images */
@@ -7326,6 +7330,10 @@ iframe {
   /* Add a transparency effect for thumnbail images */
   .demo {
     opacity: 0.9;
+    display: block;
+    border: 1px solid #461d05;
+    border-radius: 5%;
+
   }
 
   .active,
@@ -7392,7 +7400,7 @@ iframe {
 
   /* Hide the images by default */
   .mySlides {
-    display: none;
+    display: block;
   }
 
   /* Next & previous buttons */
