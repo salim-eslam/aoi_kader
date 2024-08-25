@@ -11,16 +11,17 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OfferController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\CommentController;
-use App\Http\Controllers\MessageController;
 
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\AboutController;
 
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SlidbarController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DepartmentController;
@@ -66,7 +67,8 @@ Route::group(['prefix'=>'/admin/','middleware' => ['auth','admin']], function ()
     Route::resource('cataloges', CatalogController::class);
     Route::resource('previos_works', PreviosWorkController::class);
     Route::resource('products', ProductController::class);
-    // Route::get('partners',  [PartnerController::class,'index'])->name('partners.index');
+    Route::resource('/settings', SettingController::class);
+
     Route::get('partners/index',[PartnerController::class,'index'])->name('partners.index');
     Route::get('partners/create',[PartnerController::class,'create'])->name('partners.create');
     Route::post('partners/store',[PartnerController::class,'store'])->name('partners.store');

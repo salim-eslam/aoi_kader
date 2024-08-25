@@ -4,19 +4,20 @@ namespace App\Http\Controllers;
 
 use MetaTag;
 use App\Models\Team;
+use App\Models\About;
 use App\Models\Catalog;
 use App\Models\Comment;
 use App\Models\Message;
 use App\Models\Partner;
 use App\Models\Product;
-use App\Models\Slidbar;
-use App\Models\About;
+use App\Models\Setting;
 
 // use PHPSTORM_META\type;
+use App\Models\Slidbar;
 use App\Mail\UserMessage;
 use App\Models\Department;
-use App\Models\PreviosWork;
 
+use App\Models\PreviosWork;
 use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreMessage;
@@ -43,6 +44,7 @@ class HomeController extends Controller
     {
         $slidbars = Slidbar::all();
         $partners=Partner::all();
+        $setting=Setting::all();
         $products = Product::active()->paginate(8);
         // dd($products);
         return view(
@@ -51,7 +53,7 @@ class HomeController extends Controller
                 'slidbars' => $slidbars,
                 'products' => $products,
                 'partners' => $partners,
-
+                'setting'=>$setting
             ]
         );
     }

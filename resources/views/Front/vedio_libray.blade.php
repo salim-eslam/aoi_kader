@@ -13,55 +13,52 @@
    <!-- our images gallery section start -->
    <div class="container mt-5">
     <div class="row">
+        <div id="gallery">
+            <h2 class="mainTitle" data-lang="gallery title">gallery</h2>
+            <div class="container">
+              <div class="box">
+                <div class="galleryPhoto">
+                  <img src="{{asset('images/gallary/gallery-01.png')}}" alt="gallery-01" />
+                 </div>
+              </div>
+              <div class="box">
+                <div class="galleryPhoto">
+                  <img src="{{asset('images/gallary/gallery-02.png')}}" alt="gallery-02" />
+                </div>
+              </div>
+              <div class="box">
+                <div class="galleryPhoto">
+                  <img src="{{asset('images/gallary/gallery-03.jpg')}}" alt="gallery-03" />
+                </div>
+              </div>
+              <div class="box">
+                <div class="galleryPhoto">
+                  <img src="{{asset('images/gallary/gallery-04.png')}}" alt="gallery-04" />
+                </div>
+              </div>
+              <div class="box">
+                <div class="galleryPhoto">
+                  <img src="{{asset('images/gallary/gallery-05.jpg')}}" alt="gallery-04" />
+                </div>
+              </div>
+              <div class="box">
+                <div class="galleryPhoto">
+                  <img src="{{asset('images/gallary/gallery-02.png')}}" alt="gallery-05" />
+                </div>
+              </div>
+              <div class="box">
+                <div class="galleryPhoto">
+                  <img src="{{asset('images/gallary/gallery-04.png')}}" alt="gallery-04" />
+                </div>
+              </div>
+              <div class="box">
+                <div class="galleryPhoto">
+                  <img src="{{asset('images/gallary/gallery-05.jpg')}}" alt="gallery-04" />
+                </div>
+              </div>
 
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-            <div class="card myCard">
-                <img src="{{asset('images/gallary/mountain.jpg')}}" class="card-img-top" alt="Image 1">
-                <!-- <div class="card-body">
-                    <p class="card-text">Description for Image 1</p>
-                </div> -->
             </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-            <div class="card myCard">
-                <img src="{{asset('images/gallary/image2.jpg')}}" class="card-img-top" alt="Image 2">
-                <!-- <div class="card-body">
-                    <p class="card-text">Description for Image 2</p>
-                </div> -->
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4 ">
-            <div class="card myCard">
-                <img src="{{asset('images/gallary/image3.jpg')}}" class="card-img-top" alt="Image 3">
-                <!-- <div class="card-body">
-                    <p class="card-text">Description for Image 3</p>
-                </div> -->
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-            <div class="card myCard">
-                <img src="{{asset('images/gallary/image4.jpg')}}" class="card-img-top" alt="Image 1">
-                <!-- <div class="card-body">
-                    <p class="card-text">Description for Image 1</p>
-                </div> -->
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-            <div class="card myCard">
-                <img src="{{asset('images/gallary/image5.jpg')}}" class="card-img-top" alt="Image 2">
-                <!-- <div class="card-body">
-                    <p class="card-text">Description for Image 2</p>
-                </div> -->
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-            <div class="card myCard">
-                <img src="{{asset('images/gallary/image6.jpg')}}" class="card-img-top" alt="Image 3">
-                <!-- <div class="card-body">
-                    <p class="card-text">Description for Image 3</p>
-                </div> -->
-            </div>
-        <!-- Add more images here -->
+          </div>
     </div>
 </div>
 
@@ -86,39 +83,45 @@
 <!-- Video Gallery Container -->
 <div class="container mt-5">
     <div class="row">
-        <div class="col-lg-4 col-md-6 col-sm-12">
-            <!-- Video 1 -->
-            <div class="video-gallery">
-                <div class="embed-responsive embed-responsive-16by9 myVideo">
-                    <iframe class="embed-responsive-item" data-video-url="https://www.youtube.com/embed/aj-dvRN1SCA" src="https://www.youtube.com/embed/aj-dvRN1SCA" frameborder="0" allowfullscreen></iframe>
+        <div id="topVideos">
+            <h2 class="mainTitle" data-lang="top videos title">top videos</h2>
+            <div class="container">
+                <div class="holder">
+                    <div class="list">
+                        <div class="name" data-lang="top videos name"></div>
+                        <ul>
+                            <li class="video-item" data-video-src="https://www.youtube.com/embed/t9UVx2ZervM?si=KtCKLI3mkh2KI3Wy">
+                                <span data-lang="video 1">video 1</span>
+                                <span><iframe width="260" height="75" src="https://www.youtube.com/embed/t9UVx2ZervM?si=KtCKLI3mkh2KI3Wy" allowfullscreen></iframe></span>
+                            </li>
+                    <li class="video-item" data-video-src="https://www.youtube.com/embed/TeIqHn4SoWE?si=vvVK3W5hRJ9xJx37" >
+                        <span data-lang="video 2">video 2</span>
+                        <span><iframe width="260" height="75" src="https://www.youtube.com/embed/TeIqHn4SoWE?si=vvVK3W5hRJ9xJx37"  allowfullscreen></iframe></span>
+                    </li>
+                    <li class="video-item" data-video-src="https://www.youtube.com/embed/wyOJfLSeZIE?si=zr8qBII8XNWnU_FW" >
+                        <span data-lang="video 3"></span>video 3<span><iframe width="260" height="75" src="https://www.youtube.com/embed/wyOJfLSeZIE?si=zr8qBII8XNWnU_FW"  allowfullscreen></iframe></span>
+                    </li>
+                    <li class="video-item" data-video-src="https://www.youtube.com/embed/t9UVx2ZervM?si=KtCKLI3mkh2KI3Wy">
+                        <span data-lang="video 4"></span>video 4<span><iframe width="260" height="75" src="https://www.youtube.com/embed/t9UVx2ZervM?si=KtCKLI3mkh2KI3Wy" allowfullscreen></iframe></span></li>
+                    <li class="video-item" data-video-src="https://www.youtube.com/embed/t9UVx2ZervM?si=KtCKLI3mkh2KI3Wy">
+                        <span data-lang="video 4"></span>video 5<span><iframe width="260" height="75" src="https://www.youtube.com/embed/t9UVx2ZervM?si=KtCKLI3mkh2KI3Wy" allowfullscreen></iframe></span></li>
+                    <li class="video-item" data-video-src="https://www.youtube.com/embed/t9UVx2ZervM?si=KtCKLI3mkh2KI3Wy" >
+                        <span data-lang="video 6"></span>video 6<span><iframe width="260" height="75" src="https://www.youtube.com/embed/t9UVx2ZervM?si=KtCKLI3mkh2KI3Wy" allowfullscreen></iframe></span></li>
+                    <li class="video-item" data-video-src="https://www.youtube.com/embed/t9UVx2ZervM?si=KtCKLI3mkh2KI3Wy" >
+                        <span data-lang="video 7"></span>video 7<span><iframe width="260" height="75" src="https://www.youtube.com/embed/t9UVx2ZervM?si=KtCKLI3mkh2KI3Wy" allowfullscreen></iframe></span></li>
+                    <li class="video-item" data-video-src="https://www.youtube.com/embed/t9UVx2ZervM?si=KtCKLI3mkh2KI3Wy">
+                        <span data-lang="video 8"></span>video 8<span><iframe width="260" height="75" src="https://www.youtube.com/embed/t9UVx2ZervM?si=KtCKLI3mkh2KI3Wy" allowfullscreen></iframe></span></li>
+                            <!-- Repeat for other videos -->
+                        </ul>
+                    </div>
+                    <div class="preview">
+                        <!-- <span data-lang="video 1"></span> -->
+                        <span><iframe id="preview-frame" width="100%" height="450px" src="https://www.youtube.com/embed/t9UVx2ZervM?si=KtCKLI3mkh2KI3Wy" allowfullscreen></iframe></span>
+                        <!-- <div class="info" data-lang="info"></div> -->
+                    </div>
                 </div>
-                <h5>Video 1 Title</h5>
-                <p class="video-description" data-description="Description for Video 1">Video 1 Description</p>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6 col-sm-12">
-            <!-- Video 2 -->
-            <div class="video-gallery">
-                <div class="embed-responsive embed-responsive-16by9 myVideo">
-                    <iframe class="embed-responsive-item" data-video-url="https://www.youtube.com/embed/aj-dvRN1SCA" src="https://www.youtube.com/embed/aj-dvRN1SCA" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <h5>Video 2 Title</h5>
-                <p class="video-description" data-description="Description for Video 2">Video 2 Description</p>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12">
-
-        <div class="col-lg-4 col-md-6 col-sm-12">
-            <!-- Video 3 -->
-            <div class="video-gallery">
-                <div class="embed-responsive embed-responsive-16by9 myVideo">
-                    <iframe class="embed-responsive-item" data-video-url="https://www.youtube.com/embed/aj-dvRN1SCA" src="https://www.youtube.com/embed/aj-dvRN1SCA" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <h5>Video 3 Title</h5>
-                <p class="video-description" data-description="Description for Video 3">Video 3 Description</p>
-            </div>
-        </div>
-
 
 
     </div>
@@ -134,16 +137,12 @@
 @endsection
 @section('scripts')
 <script>
-const videoDescriptions = document.querySelectorAll('.video-description');
-
-// Add a click event listener to each video description
-videoDescriptions.forEach((description) => {
-  description.addEventListener('click', (event) => {
-    // Show the popup when the video description is clicked
-    const popup = description.nextElementSibling;
-    popup.style.display = 'block';
-  });
-});
-
+    // JavaScript to change the video in the preview section
+    document.querySelectorAll('.video-item').forEach(item => {
+        item.addEventListener('click', function() {
+            var videoSrc = this.getAttribute('data-video-src');
+            document.getElementById('preview-frame').src = videoSrc;
+        });
+    });
 </script>
 @endsection
