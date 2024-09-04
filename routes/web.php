@@ -27,6 +27,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\PreviosWorkController;
 use App\Http\Controllers\VideoLibraryController;
+use App\Http\Controllers\MediaController;
 
 // use App\Http\Middleware\TrackVisitor;
 
@@ -68,6 +69,7 @@ Route::group(['prefix'=>'/admin/','middleware' => ['auth','admin']], function ()
     Route::resource('previos_works', PreviosWorkController::class);
     Route::resource('products', ProductController::class);
     Route::resource('/settings', SettingController::class);
+    Route::resource('/medias', MediaController::class);
 
     Route::get('partners/index',[PartnerController::class,'index'])->name('partners.index');
     Route::get('partners/create',[PartnerController::class,'create'])->name('partners.create');
