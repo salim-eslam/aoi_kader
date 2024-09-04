@@ -8,13 +8,13 @@
 </style>
 @endsection
 @section('content')
-<section class=" slider_section2 mb-50" >
+{{-- <section class=" slider_section2 mb-50" > --}}
 
    <!-- our images gallery section start -->
    <div class="container mt-5">
     <div class="row">
         <div id="gallery">
-            <h2 class="mainTitle" data-lang="gallery title">gallery</h2>
+            <h2 class="mainTitle text-center pb-3" data-lang="gallery title">gallery</h2>
             <div class="container">
               <div class="box">
                 <div class="galleryPhoto">
@@ -84,7 +84,7 @@
 <div class="container mt-5">
     <div class="row">
         <div id="topVideos">
-            <h2 class="mainTitle" data-lang="top videos title">top videos</h2>
+            <h2 class="mainTitle text-center pb-3" data-lang="top videos title">top videos</h2>
             <div class="container">
                 <div class="holder">
                     <div class="list">
@@ -116,7 +116,7 @@
                     </div>
                     <div class="preview">
                         <!-- <span data-lang="video 1"></span> -->
-                        <span><iframe id="preview-frame" width="100%" height="450px" src="https://www.youtube.com/embed/t9UVx2ZervM?si=KtCKLI3mkh2KI3Wy" allowfullscreen></iframe></span>
+                        <span><iframe id="preview-frame" width="" height="450px" src="https://www.youtube.com/embed/t9UVx2ZervM?si=KtCKLI3mkh2KI3Wy" allowfullscreen></iframe></span>
                         <!-- <div class="info" data-lang="info"></div> -->
                     </div>
                 </div>
@@ -132,7 +132,7 @@
 
 {{-- </div> --}}
 
-</section>
+{{-- </section> --}}
  <!-- our videos galley section end -->
 @endsection
 @section('scripts')
