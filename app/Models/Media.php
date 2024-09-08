@@ -18,4 +18,8 @@ class Media extends Model
         'type',
         'status'
     ];
+    public function scopeActive($query)
+    {
+        return $query->where('status','active');
+    }
 }

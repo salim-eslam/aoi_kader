@@ -107,7 +107,7 @@ Route::group(
         Route::get('/',  [HomeController::class, 'index'])->name('home');
         Route::get('/contact_us',  [HomeController::class, 'contact'])->name('contact_us');
         Route::get('/about_us',  [HomeController::class, 'about'])->name('about_us');
-        Route::get('/video_library',  [VideoLibraryController::class, 'index'])->name('video_library');
+        Route::get('/video_library',  [HomeController::class, 'media'])->name('video_library');
 
 
         Route::get('/product/show/{id}',  [HomeController::class, 'product_show'])->name('product_show');
