@@ -266,80 +266,53 @@
     <section class="category-carousel container mb-5">
         <h2 class="section-title text-center mb-3 pb-xl-2 mb-xl-4">{{ trans('home.our_partners') }}</h2>
 
-        <div class="position-relative">
+        {{-- <div class="position-relative">
           <div class="swiper-container js-swiper-slider" >
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper"> --}}
 
-          @foreach ($partners as $partner )
+                <div class="swiper-container js-swiper-slider">
+                    <div class="swiper-wrapper">
+                      <!-- Swiper slides go here -->
+                      @foreach ($partners as $partner )
 
-              <div class="swiper-slide">
-                <img loading="lazy" class="w-100  mb-3" src="{{asset('images/partners/'.$partner->image )}}" width="100%"
-                  height="100vh" alt="" />
-                <div class="text-center">
-                  <a href="#" class="menu-link fw-medium">{{$partner->title}}</a>
-                </div>
-              </div>
-              @endforeach
+                      <div class="swiper-slide">
+                        <img loading="lazy" class="w-100  mb-3" src="{{asset('images/partners/'.$partner->image )}}" width="100%"
+                          height="100vh" alt="" />
+                        <div class="text-center">
+                          <a href="#" class="menu-link fw-medium">{{$partner->title}}</a>
+                        </div>
+                      </div>
+                      @endforeach
+                    </div>
+                  </div>
 
-            </div><!-- /.swiper-wrapper -->
-          </div><!-- /.swiper-container js-swiper-slider -->
 
-          {{-- <div
-            class="products-carousel__prev products-carousel__prev-1 position-absolute top-50 d-flex align-items-center justify-content-center">
-            <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
-              <use href="#icon_prev_md" />
-            </svg>
-          </div><!-- /.products-carousel__prev -->
-          <div
-            class="products-carousel__next products-carousel__next-1 position-absolute top-50 d-flex align-items-center justify-content-center">
-            <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
-              <use href="#icon_next_md" />
-            </svg>
-          </div><!-- /.products-carousel__next --> --}}
-        </div><!-- /.position-relative -->
+
+
       </section>
-    </div>
+
 
 
 @endsection
 @section('scripts')
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        var swiper = new Swiper('.slider_swiper', {
+        // Initialize Swiper for '.js-swiper-slider' only, since that's the class used in the HTML
+        var swiper = new Swiper('.js-swiper-slider', {
             loop: true,
             autoplay: {
-                delay: 2000, // Time between slides in milliseconds (3000ms = 3s)
+                delay: 2000, // Time between slides in milliseconds (2000ms = 2s)
                 disableOnInteraction: true, // Autoplay will not be disabled after user interactions
             },
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: '.products-carousel__next-1',
+                prevEl: '.products-carousel__prev-1',
             },
-            slidesPerView: 1,
+            slidesPerView: 5,
             spaceBetween: 30,
         });
     });
-
-    document.addEventListener('DOMContentLoaded', function () {
-    var swiper = new Swiper('.js-swiper-slider', {
-        loop: true,
-            autoplay: {
-                delay: 2000, // Time between slides in milliseconds (3000ms = 3s)
-                disableOnInteraction: true, // Autoplay will not be disabled after user interactions
-            },
-        // slidesPerView: 6,
-        // slidesPerGroup: 1,
-        // loop: true,
-        navigation: {
-            nextEl: '.products-carousel__next-1',
-            prevEl: '.products-carousel__prev-1',
-        },
-        slidesPerView: 5,
-            spaceBetween: 30,
-
-    });
-});
-
-
 </script>
 @endsection
+
+
