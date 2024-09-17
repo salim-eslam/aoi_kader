@@ -11,6 +11,7 @@ use App\Models\Message;
 use App\Models\Partner;
 use App\Models\Product;
 use App\Models\Setting;
+use App\Models\Media;
 
 // use PHPSTORM_META\type;
 use App\Models\Slidbar;
@@ -152,6 +153,14 @@ class HomeController extends Controller
         return view('Front.about_us',[
             'teams'=>$teams,
             'abouts'=>$abouts
+        ]);
+    }
+
+    public function media()
+    {
+        $medias=Media::active()->get();
+        return view('Front.vedio_libray',[
+            'medias'=>$medias
         ]);
     }
 
