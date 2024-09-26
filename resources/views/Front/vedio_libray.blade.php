@@ -49,7 +49,7 @@
     </div>
 
     <!-- Video Gallery Container -->
-    <div class="container mt-5">
+    <div class="container " style="height: 700px">
         <div class="row">
             <div id="topVideos">
                 <h2 class="mainTitle text-center pb-3" data-lang="top videos title">top videos</h2>
@@ -61,12 +61,14 @@
                                 @foreach ($medias->where('type', 'video') as $media)
 
 
-                                <li class="video-item"
+                                <li class="video-item text-center "
                                     data-video-src="{{ $media->file }}">
-                                    <span data-lang="video 1">{{ $media->title }}</span>
-                                    <span><iframe width="260" height="140"
+                                    <span><iframe width="260" height="130" class="rounded mt-0"
                                             src="{{ $media->file }}"
-                                            allowfullscreen></iframe></span>
+                                            allowfullscreen></iframe>
+                                            <span data-lang="video 1" class="text-dark h6">{{ $media->title }}</span>
+
+                                        </span>
                                 </li>
                                 @endforeach
                                 <!-- Repeat for other videos -->
@@ -74,7 +76,7 @@
                         </div>
                         <div class="preview">
                             <!-- <span data-lang="video 1"></span> -->
-                            <span><iframe id="preview-frame" width="" height="450px"
+                            <span><iframe id="preview-frame" width="" height="450px" class="rounded mt-0"
                                     src="{{ $medias->where('type', 'video')->first()->file}}"
                                     allowfullscreen></iframe></span>
                             <!-- <div class="info" data-lang="info"></div> -->

@@ -7589,7 +7589,7 @@ iframe {
     -webkit-box-align: unset;
         -ms-flex-align: unset;
             align-items: unset;
-    padding: 20px;
+    /* padding: 20px; */
     background-color: #f4f4f4;
     font-weight: bold;
     color: #2196f3;
@@ -7600,7 +7600,7 @@ iframe {
     max-height: 500px;
   }
   #topVideos .container .holder .list ul li {
-    padding: 20px 10px;
+    padding: 7px 10px;
     border-top: 1px solid #ececec;
     cursor: pointer;
     -webkit-transition: 0.4s;
@@ -7627,7 +7627,7 @@ iframe {
   #topVideos .container .holder .preview {
     background-color: #e2e2e2;
     width: 100%;
-    padding: 10px;
+    /* padding: 10px; */
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -7646,9 +7646,9 @@ iframe {
     max-width: 100%;
   }
   #topVideos .container .holder .preview .info {
-    padding: 20px;
+    /* padding: 20px; */
     background-color: white;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     cursor: default;
   }
 
@@ -7662,7 +7662,7 @@ iframe {
   }
   @media (min-width: 1024px) and (max-width: 1439px) {
     #topVideos .container .holder .list ul {
-      max-height: 350px;
+      max-height: 450px;
     }
   }
   @media (min-width: 991px) and (max-width: 1023px) {

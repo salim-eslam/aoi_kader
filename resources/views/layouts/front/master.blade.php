@@ -193,5 +193,28 @@
   <script src="{{ URL::asset('assets/product_details/js/custom.js')}}"></script>
 
 
+   <!-- jquery plugins here-->
+ <script src="{{ URL::asset('assets/front/saad/js/jquery-1.12.1.min.js')}}"></script>
+ <!-- popper js -->
+ <script src="{{ URL::asset('assets/front/saad/js/popper.min.js')}}"></script>
+ <!-- bootstrap js -->
+ <script src="{{ URL::asset('assets/front/saad/js/bootstrap.min.js')}}"></script>
+ <!-- magnific popup js -->
+ <script src="{{ URL::asset('assets/front/saad/js/jquery.magnific-popup.js')}}"></script>
+ <!-- carousel js -->
+ <script src="{{ URL::asset('assets/front/saad/js/owl.carousel.min.js')}}"></script>
+ <script src="{{ URL::asset('assets/front/saad/js/jquery.nice-select.min.js')}}"></script>
+ <!-- slick js -->
+ <script src="{{ URL::asset('assets/front/saad/js/slick.min.js')}}"></script>
+ <script src="{{ URL::asset('assets/front/saad/js/jquery.counterup.min.js')}}"></script>
+ <script src="{{ URL::asset('assets/front/saad/js/waypoints.min.js')}}"></script>
+ <script src="{{ URL::asset('assets/front/saad/js/contact.js')}}"></script>
+ <script src="{{ URL::asset('assets/front/saad/js/jquery.ajaxchimp.min.js')}}"></script>
+ <script src="{{ URL::asset('assets/front/saad/js/jquery.form.js')}}"></script>
+ <script src="{{ URL::asset('assets/front/saad/js/jquery.validate.min.js')}}"></script>
+ <script src="{{ URL::asset('assets/front/saad/js/mail-script.js')}}"></script>
+ <!-- custom js -->
+ <script src="{{ URL::asset('assets/front/saad/js/custom.js')}}"></script>
+
 
 </html>
