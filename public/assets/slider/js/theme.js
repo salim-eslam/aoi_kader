@@ -896,64 +896,64 @@ function pureFadeOut(e) {
     return CartDrawer;
   })();
 
-  UomoSections.SwiperSlideshow = (function () {
-    function SwiperSlideshow () {
-      this.selectors = {
-        container: '.js-swiper-slider'
-      }
+//   UomoSections.SwiperSlideshow = (function () {
+//     function SwiperSlideshow () {
+//       this.selectors = {
+//         container: '.js-swiper-slider'
+//       }
 
-      this.$containers = document.querySelectorAll(this.selectors.container);
-      this._initSliders();
-    }
+//       this.$containers = document.querySelectorAll(this.selectors.container);
+//       this._initSliders();
+//     }
 
-    SwiperSlideshow.prototype = Object.assign({}, SwiperSlideshow.prototype, {
-      _initSliders() {
-        this.$containers.forEach(function($sliderContainer) {
-          if ($sliderContainer.classList.contains('swiper-container-initialized')) {
-            return;
-          }
+//     SwiperSlideshow.prototype = Object.assign({}, SwiperSlideshow.prototype, {
+//       _initSliders() {
+//         this.$containers.forEach(function($sliderContainer) {
+//           if ($sliderContainer.classList.contains('swiper-container-initialized')) {
+//             return;
+//           }
 
-          let settings = {
-            autoplay: 0,
-            slidesPerView: 1,
-            loop: true,
-            navigation: {
-              nextEl: ".pc__img-next",
-              prevEl: ".pc__img-prev"
-            }
-          };
+//           let settings = {
+//             autoplay: 0,
+//             slidesPerView: 1,
+//             loop: true,
+//             navigation: {
+//               nextEl: ".pc__img-next",
+//               prevEl: ".pc__img-prev"
+//             }
+//           };
 
-          if ($sliderContainer.classList.contains('swiper-number-pagination')) {
-            settings = Object.assign(settings, {
-              pagination: {
-                "el": ".slideshow-pagination",
-                "type": "bullets",
-                "clickable": true,
-                renderBullet: function(index, className) {
-                  return '<span class="' + className + '">' + (index + 1).toString().padStart(2, '0') + '</span>';
-                }
-              }
-            });
-          }
+//           if ($sliderContainer.classList.contains('swiper-number-pagination')) {
+//             settings = Object.assign(settings, {
+//               pagination: {
+//                 "el": ".slideshow-pagination",
+//                 "type": "bullets",
+//                 "clickable": true,
+//                 renderBullet: function(index, className) {
+//                   return '<span class="' + className + '">' + (index + 1).toString().padStart(2, '0') + '</span>';
+//                 }
+//               }
+//             });
+//           }
 
-          if ($sliderContainer.dataset.settings) {
-            settings = Object.assign(settings, JSON.parse($sliderContainer.dataset.settings));
-          }
+//           if ($sliderContainer.dataset.settings) {
+//             settings = Object.assign(settings, JSON.parse($sliderContainer.dataset.settings));
+//           }
 
-          if ($sliderContainer.querySelectorAll('.swiper-slide').length > 1) {
-            // eslint-disable-next-line no-undef
-            new Swiper($sliderContainer, settings);
-          } else {
-            $sliderContainer.classList.add('swiper-container-initialized');
-            const $active_slide = $sliderContainer.querySelector('.swiper-slide');
-            $active_slide && $active_slide.classList.add('swiper-slide-active');
-          }
-        });
-      }
-    });
+//           if ($sliderContainer.querySelectorAll('.swiper-slide').length > 1) {
+//             // eslint-disable-next-line no-undef
+//             new Swiper($sliderContainer, settings);
+//           } else {
+//             $sliderContainer.classList.add('swiper-container-initialized');
+//             const $active_slide = $sliderContainer.querySelector('.swiper-slide');
+//             $active_slide && $active_slide.classList.add('swiper-slide-active');
+//           }
+//         });
+//       }
+//     });
 
-    return SwiperSlideshow;
-  })();
+//     return SwiperSlideshow;
+//   })();
 
   UomoSections.ProductSingleMedia = (function () {
     function ProductSingleMedia () {
@@ -969,7 +969,7 @@ function pureFadeOut(e) {
       $('.product-single__thumbnail .swiper-slide').css({height:'auto'});
           var currentSlide = that.activeIndex;
           var newHeight = $(that.slides[currentSlide]).height();
-  
+
           $('.product-single__thumbnail .swiper-wrapper, .product-single__thumbnail .swiper-slide').css({ height : newHeight })
           that.update();
      }
@@ -1111,14 +1111,14 @@ function pureFadeOut(e) {
             }
           })
         })
-      
+
         // Mouseover event
         star.addEventListener('mouseleave', (e) => {
           stars.forEach((item) => {
             item.classList.remove('is-overed');
           })
         })
-      
+
         // Click event
         star.addEventListener('click', (e) => {
           const selected_index = stars.indexOf(e.target);
@@ -1393,7 +1393,7 @@ function pureFadeOut(e) {
       });
 
       const btn_player = $(this);
-  
+
       $($(this).data("video")).off("ended").on("ended", function() {
         $(btn_player).removeClass("playing");
         this.currentTime = 0;

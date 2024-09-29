@@ -21,7 +21,7 @@
                 </div>
                 {{-- {{ route('home') }} --}}
                 <div class="user-info">
-                    <h4 class="font-weight-semibold mt-3 mb-0">Atico</h4>
+                    <h4 class="font-weight-semibold mt-3 mb-0">Kader</h4>
                     <span class="mb-0 text-muted">Admin</span>
                 </div>
             </div>
