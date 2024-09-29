@@ -11,5 +11,5 @@ return[
     'email'=>'Email',
     'or'=>'or',
     'egypt'=>'Arab-Republic of Egypt',
-    'address'=>'Cairo-Ismailia Agricultural Road, Abu Zaabal, Qalyubia,before the railway crossing ',
+    'address'=>'2 Al Tayaran Street, Nasr City, Cairo, Cairo Governorate, Egypt 11765',
 ];

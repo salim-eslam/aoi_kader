@@ -129,7 +129,7 @@
             </div>
         </div>
         <div class="banner_position_img2">
-            <img src="{{ URL::asset('/images/home/Picture1.jpg') }}" alt="">
+            <img src="{{ URL::asset('/images/home/pic10.jpg') }}" width="500" height="375" alt="">
         </div>
         </div>
         </div>
@@ -152,34 +152,34 @@
                             <div class="instagram_gallery_list d-flex">
                                 <div class="instagram_img">
                                     <a href="#">
-                                        <img src="{{ URL::asset('/images/home/Picture8.jpg') }}" alt="">
+                                        <img src="{{ URL::asset('/images/home/pic1.jpeg') }}" width="185" height="172" alt="">
                                     </a>
                                 </div>
                                 <div class="instagram_img">
                                     <a href="#">
-                                        <img src="{{ URL::asset('/images/home/Picture3.jpg') }}" alt="">
+                                        <img src="{{ URL::asset('/images/home/pic2.png') }}" width="185" height="172" alt="">
                                     </a>
                                 </div>
                                 <div class="instagram_img">
                                     <a href="#">
-                                        <img src="{{ URL::asset('/images/home/Picture4.jpg') }}" alt="">
+                                        <img src="{{ URL::asset('/images/home/pic3.jpg') }}" width="185" height="172" alt="">
                                     </a>
                                 </div>
                             </div>
                             <div class="instagram_gallery_list d-flex">
                                 <div class="instagram_img">
                                     <a href="#">
-                                        <img src="{{ URL::asset('/images/home/Picture5.jpg') }}" alt="">
+                                        <img src="{{ URL::asset('/images/home/pic4.jpg') }}" width="185" height="172" alt="">
                                     </a>
                                 </div>
                                 <div class="instagram_img">
                                     <a href="#">
-                                        <img src="{{ URL::asset('/images/home/Picture6.jpg') }}" alt="">
+                                        <img src="{{ URL::asset('/images/home/pic5.jpg') }}" width="185" height="172" alt="">
                                     </a>
                                 </div>
                                 <div class="instagram_img">
                                     <a href="#">
-                                        <img src="{{ URL::asset('/images/home/Picture7.jpg') }}" alt="">
+                                        <img src="{{ URL::asset('/images/home/pic6.jpeg') }}" width="185" height="172" alt="">
                                     </a>
                                 </div>
                             </div>
