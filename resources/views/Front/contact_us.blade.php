@@ -21,6 +21,8 @@
                             <div class="contact_info_list wow fadeInUp" data-wow-delay="0.1s" data-wow-duration="1.1s">
                                 <span>{{ trans('contact.egypt') }}</span>
                                 <p>{{ trans('contact.address') }}</p>
+
+
                                 <p>{{ trans('contact.fax') }}: 0222634596</p>
 
                                 <p>{{ trans('contact.phone') }}: <a href="tel:0222634591"> 011 51871616</a> </p>
